@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="night">#2D2D2D</color>
+    <color name="day">#F5EFE4</color>
+    <color name="yellow">#F5B33E</color>
+    <color name="orange">#EF604A</color>
+    <color name="pink">#D05078</color>
+    <color name="darkpurple">#3D3D82</color>
+    <color name="greyforms">#8E8E8E</color>
+    <color name="lightOrange">#F0D198</color>
+    <color name="statusGreen">#A9B048</color>
+    <color name="lightPink">#EE899E</color>
+    <color name="lightPurple">#7D7BB1</color>
+</resources>

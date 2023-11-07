@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/day"
+    tools:context=".ChooseLashes">
+
+    <ScrollView
+        android:id="@+id/scv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/chooseLashesBackButton"
+                style="@style/ButtonsStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/atr_s"
+                android:padding="16dp"
+                android:src="@drawable/back_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/chooseTitle"
+                style="@style/FabulashText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-16dp"
+                android:text="@string/elija_pestanas"
+                android:textSize="50sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chooseLashesBackButton" />
+
+            <Button
+                android:id="@+id/iAButton"
+                style="@style/ButtonsStyle3.1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/night"
+                android:paddingVertical="16dp"
+                android:text="@string/i_a"
+                android:textColor="@color/day"
+                android:textSize="40sp"
+                app:layout_constraintEnd_toStartOf="@id/galleryButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chooseTitle" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/galleryButton"
+                style="@style/ButtonsStyle3.2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="24dp"
+                android:contentDescription="@string/galeria"
+                app:icon="@drawable/baseline_photo_library_24"
+                app:iconGravity="textStart"
+                app:iconSize="70dp"
+                app:layout_constraintBottom_toBottomOf="@id/iAButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iAButton"
+                app:layout_constraintTop_toTopOf="@id/iAButton" />
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/montserratregular"
+                android:text="@string/ya_conoce_su_estilo_preferido"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/galleryButton"
+                app:layout_constraintStart_toStartOf="@id/iAButton"
+                app:layout_constraintTop_toBottomOf="@id/iAButton"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/question"
+                app:layout_constraintStart_toStartOf="@id/iAButton"
+                app:layout_constraintEnd_toEndOf="@id/galleryButton"
+                android:hint="Buscar pestañas..."
+                android:layout_marginTop="8dp"
+                style="@style/InputLayout.1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/searchBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/filtrarText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/iAButton"
+                app:layout_constraintTop_toBottomOf="@id/layoutSearch"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserratregular"
+                android:text="@string/filtrar_por"
+                android:textSize="18sp"
+                />
+
+            <Spinner
+                android:id="@+id/layoutFilter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/filtrarText"
+                app:layout_constraintStart_toEndOf="@id/filtrarText"
+                app:layout_constraintEnd_toEndOf="@id/galleryButton"
+                style="@style/SpinnerStyle">
+
+            </Spinner>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="16dp"
+                android:id="@+id/recyclerLashes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/filtrarText"
+                app:layout_constraintStart_toStartOf="@id/filtrarText"
+                app:layout_constraintEnd_toEndOf="@id/galleryButton"
+                tools:listitem="@layout/card_lashes"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

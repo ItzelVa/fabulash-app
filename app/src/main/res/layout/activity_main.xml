@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/startback">
+
+    <FrameLayout
+        android:id="@+id/startTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="28dp"
+        android:textAppearance="@style/TextStroke">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fabulash"
+            android:textSize="60sp"
+            android:textColor="@color/darkpurple"
+            android:fontFamily="@font/spicy"
+            android:layout_marginTop="-12dp"
+            android:textAppearance="@style/TextStroke">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fabulash"
+            android:textSize="60sp"
+            android:textColor="@color/pink"
+            android:fontFamily="@font/spicy"
+            android:layout_marginTop="-9dp"
+            android:textAppearance="@style/TextStroke">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fabulash"
+            android:textSize="60sp"
+            android:textColor="@color/orange"
+            android:fontFamily="@font/spicy"
+            android:layout_marginTop="-6dp"
+            android:textAppearance="@style/TextStroke">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fabulash"
+            android:textSize="60sp"
+            android:textColor="@color/yellow"
+            android:fontFamily="@font/spicy"
+            android:layout_marginTop="-3dp"
+            android:textAppearance="@style/TextStroke">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fabulash"
+            android:textSize="60sp"
+            android:textColor="@color/day"
+            android:fontFamily="@font/spicy"
+            android:textAppearance="@style/TextStroke">
+
+        </TextView>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/startSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/startTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/slogan"
+        android:fontFamily="@font/spicy"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="-15dp"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:id="@+id/startClosedEye"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/startSlogan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/closed_eye"
+        android:layout_marginTop="-50dp"
+        android:contentDescription="@string/fabulash"/>
+
+    <ImageView
+        android:id="@+id/startOpenedEye"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/startClosedEye"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/open_eye_colored"
+        android:layout_marginTop="-40dp"
+        android:contentDescription="@string/fabulash"/>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="26dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/darkpurple"
+            android:layout_marginTop="-4dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/orange"
+            android:layout_marginTop="-3dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginTop="-2dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comenzar"
+            style="@style/ButtonsStyle1"/>
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

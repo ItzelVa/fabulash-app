@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseService"
+    android:background="@color/day">
+
+    <ImageButton
+        android:id="@+id/chooseServiceBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/ButtonsStyle2"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/back_button"
+        android:contentDescription="@string/atr_s"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/chooseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chooseServiceBackButton"
+        android:text="@string/elija_servicio"
+        android:textSize="50sp"
+        style="@style/FabulashText"
+        android:layout_marginTop="-16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/aplicacionButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chooseTitle"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:icon="@drawable/dark_open_eye_buttons"
+        app:iconSize="80dp"
+        app:iconGravity="top"
+        android:textSize="22sp"
+        android:textColor="@color/night"
+        android:fontFamily="@font/montserratregular"
+        style="@style/ButtonsStyle3"
+        android:backgroundTint="@color/yellow"
+        android:text="Aplicación de Extensiones de Pestañas"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/rizadoButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/aplicacionButton"
+        app:layout_constraintEnd_toEndOf="@id/aplicacionButton"
+        app:layout_constraintTop_toBottomOf="@id/aplicacionButton"
+        android:layout_marginTop="8dp"
+        app:icon="@drawable/dark_closed_eye_buttons"
+        app:iconSize="80dp"
+        app:iconTint="@color/black"
+        app:iconGravity="textTop"
+        android:textSize="22sp"
+        android:textColor="@color/night"
+        android:fontFamily="@font/montserratregular"
+        style="@style/ButtonsStyle3"
+        android:backgroundTint="@color/lightPink"
+        android:text="Rizado de Pestañas"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/retiradoButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rizadoButton"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        app:icon="@drawable/dark_open_eye_buttons"
+        app:iconSize="80dp"
+        app:iconGravity="top"
+        android:textSize="22sp"
+        android:textColor="@color/night"
+        android:fontFamily="@font/montserratregular"
+        style="@style/ButtonsStyle3"
+        android:backgroundTint="@color/lightPurple"
+        android:text="Retirado de Extensiones de Pestañas"
+        />
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/darkpurple"
+            android:layout_marginTop="-4dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/orange"
+            android:layout_marginTop="-3dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginTop="-2dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/siguiente"
+            style="@style/ButtonsStyle1"/>
+
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

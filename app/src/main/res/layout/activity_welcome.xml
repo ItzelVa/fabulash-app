@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Welcome"
+    android:background="@color/day">
+
+    <ImageView
+        android:id="@+id/imgUpRainbowTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imgUpRainbowTwo"
+        android:src="@drawable/up_rainbow_two"
+        android:contentDescription="@string/rainbow"/>
+
+    <TextView
+        android:id="@+id/welcomeFabulash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/welcomeLogo"
+        android:text="¡Bienvenido!"
+        style="@style/FabulashText"
+        android:textSize="50dp"
+        android:layout_marginBottom="16dp"/>
+
+    <ImageView
+        android:id="@+id/welcomeLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/dark_open_eye"
+        android:contentDescription="@string/fabulashLogo"/>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/welcomeLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="26dp"
+        android:layout_marginTop="70dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/darkpurple"
+            android:layout_marginTop="-4dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/orange"
+            android:layout_marginTop="-3dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginTop="-2dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:id="@+id/welcomeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comenzar"
+            style="@style/ButtonsStyle1"/>
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imgDownRainbowTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/down_rainbow_two"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

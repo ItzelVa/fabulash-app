@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:background="@drawable/back_home">
+
+    <TextView
+        android:id="@+id/tvHola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/hola"
+        style="@style/FabulashText"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/homeUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tvHola"
+        app:layout_constraintTop_toBottomOf="@id/tvHola"
+        android:text="Fulanita"
+        style="@style/FabulashText"
+        android:textColor="@color/white"
+        android:textSize="30sp"/>
+
+    <ImageButton
+        android:id="@+id/homePhoto"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvHola"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/user_photo"
+        android:contentDescription="@string/foto_del_usuario"
+        style="@style/ButtonsStyle2"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvNotify"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/homePhoto"
+        app:layout_constraintBottom_toBottomOf="@id/homePhoto"
+        app:layout_constraintEnd_toStartOf="@id/homePhoto"
+        app:cardCornerRadius="50dp"
+        android:layout_marginEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/homeNotify"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/notification"
+            android:background="@color/day"
+            android:contentDescription="@string/notificaciones"
+            style="@style/ButtonsStyle2"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/layoutNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/homeUser"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/night"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="3dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="false"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/next_appointment"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:fontFamily="@font/montserratregular"
+                    android:textColor="@color/night"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="4dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:text="26"
+                            android:textSize="40dp"
+                            android:textColor="@color/day"/>
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/tv2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="Septiembre"
+                            android:textColor="@color/night"
+                            android:layout_marginHorizontal="8dp"
+                            android:fontFamily="@font/montserratregular"/>
+
+                        <TextView
+                            android:id="@+id/tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/tv3"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="15:00"
+                            android:textColor="@color/day"
+                            android:fontFamily="@font/montserratregular"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/tv4"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="En proceso"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/white"
+                            android:background="@color/statusGreen"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/lightOrange"
+            android:layout_marginHorizontal="24dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="false"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+
+                >
+
+                <TextView
+                    android:id="@+id/tvNextAppo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/next_appointment"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:fontFamily="@font/montserratregular"
+                    android:textColor="@color/night"/>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cdDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tvNextAppo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="4dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/homeDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:text="26"
+                            android:textSize="40dp"
+                            android:textColor="@color/night"/>
+
+                        <TextView
+                            android:id="@+id/homeMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/homeDay"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="Septiembre"
+                            android:textColor="@color/night"
+                            android:fontFamily="@font/montserratregular"
+                            android:layout_marginHorizontal="8dp"/>
+
+                        <TextView
+                            android:id="@+id/homeHour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/homeMonth"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="15:00"
+                            android:textColor="@color/night"
+                            android:fontFamily="@font/montserratregular"
+                            />
+
+                        <TextView
+                            android:id="@+id/homeStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/homeHour"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="En proceso"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/statusGreen"
+                            android:paddingVertical="2dp"
+                            android:paddingHorizontal="12dp"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutButtons1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/layoutNext"
+        app:layout_constraintTop_toTopOf="@id/layoutNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/layoutButtons2"
+        android:layout_marginEnd="24dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/agendar_nueva_cita"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/homeAddAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/agendar_nueva_cita"
+            style="@style/ButtonsStyle3"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutButtons2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/layoutNext"
+        app:layout_constraintTop_toBottomOf="@id/layoutButtons1"
+        app:layout_constraintBottom_toBottomOf="@id/layoutNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="24dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/agendar_nueva_cita"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/homeMyAppoint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Mis Citas"
+            style="@style/ButtonsStyle3"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/titleSectionLashes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutNext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="@color/night"
+        android:layout_marginTop="24dp"
+        android:textSize="18sp"
+        android:text="@string/descubre_nuestros_estilos"/>
+
+    <FrameLayout
+        android:id="@+id/layoutButtons3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/layoutButtons4"
+        app:layout_constraintTop_toBottomOf="@id/titleSectionLashes"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/agendar_nueva_cita"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/homeFilters"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/filtros"
+            style="@style/ButtonsStyle3"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:backgroundTint="@color/statusGreen"
+            app:icon="@drawable/mini_eye_buttons"
+            app:iconSize="40dp"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutButtons4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/layoutButtons3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleSectionLashes"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/agendar_nueva_cita"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/homeGalery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/galeria"
+            style="@style/ButtonsStyle3"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:backgroundTint="@color/statusGreen"
+            app:icon="@drawable/mini_eye_buttons"
+            android:textSize="16sp"
+            app:iconSize="40dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutButtons5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutButtons4"
+        app:layout_constraintEnd_toStartOf="@id/layoutButtons6"
+        app:layout_constraintBottom_toTopOf="@id/layoutButtons7"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/agendar_nueva_cita"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/homeFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/deja_una_resena"
+            style="@style/ButtonsStyle3"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutButtons7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutButtons5"
+        app:layout_constraintEnd_toStartOf="@id/layoutButtons6"
+        app:layout_constraintBottom_toBottomOf="@id/layoutButtons6"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/agendar_nueva_cita"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/homeSocialMedia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="¡Nuestras Redes!"
+            style="@style/ButtonsStyle3"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutButtons6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/layoutButtons5"
+        app:layout_constraintTop_toTopOf="@id/layoutButtons5"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="24dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/agendar_nueva_cita"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/homeMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            style="@style/ButtonsStyle4"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imgDownLeft"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/down_rainbow_left"/>
+
+    <ImageView
+        android:id="@+id/imgDownRight"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/down_rainbow_right"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
