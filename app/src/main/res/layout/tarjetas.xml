@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/day">
+
+    <ImageButton
+        android:id="@+id/tarjetasBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/ButtonsStyle2"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/back_button"
+        android:backgroundTint="#fff"
+        android:contentDescription="@string/atr_s"
+        android:padding="16dp"/>
+
+    <ImageView
+        android:id="@+id/tarjetasLogo"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tarjetasBackButton"
+        android:src="@drawable/dark_closed_eye"
+        android:contentDescription="@string/fabulashLogo"/>
+
+    <TextView
+        android:id="@+id/tarjetaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tarjetasLogo"
+        android:text="@string/tarjetas"
+        android:textSize="35sp"
+        style="@style/FabulashText"
+        android:layout_marginTop="10dp"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tarjetaTitle"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/CardsView">
+
+        </androidx.cardview.widget.CardView>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv2"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mcv"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/CardsView">
+
+        </androidx.cardview.widget.CardView>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/tarjetas_acciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mcv2"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/add_button"
+            app:iconGravity="textEnd"
+            android:textSize="@dimen/null_reference"
+            app:iconSize="25dp"
+            android:gravity="center"
+            app:backgroundTint="@color/night"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/delete_button"
+            app:iconGravity="textStart"
+            app:iconSize="25dp"
+            app:backgroundTint="@color/night"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/edit_button"
+            app:iconGravity="textStart"
+            app:iconSize="25dp"
+            app:backgroundTint="@color/night"
+            />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

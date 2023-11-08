@@ -21,6 +21,12 @@
             android:name=".ChooseLashes"
             android:exported="false" />
         <activity
+            android:name=".Account"
+            android:exported="false" />
+        <activity
+            android:name=".ViewCards"
+            android:exported="false" />
+        <activity
             android:name=".ChooseService"
             android:exported="false"
             android:label="@string/title_activity_choose_service"

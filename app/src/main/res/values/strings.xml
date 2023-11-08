@@ -83,4 +83,17 @@
         <item>Pequeño</item>
         <item>Exótico</item>
     </string-array>
+=======
+    <string name="administrar_tarjetas">Administrar Tarjetas</string>
+    <string name="configuracion_cuenta">Configuración de Cuenta</string>
+    <string name="mis_reseñas">Mis Reseñas</string>
+    <string name="eliminar_cuenta">Eliminar Cuenta</string>
+    <string name="logout">Logout</string>
+    <string name="logout_question">¿Salir de Cuenta?</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="delete_question">Estas a punto de eliminar tu cuenta</string>
+    <string name="delete_details">¿Estas seguro?\nEsta acción no es reversible</string>
+    <string name="tarjetas">Tarjetas</string>
+>>>>>>> Stashed changes
 </resources>

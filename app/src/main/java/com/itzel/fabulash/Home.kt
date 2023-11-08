@@ -21,5 +21,9 @@ class Home : AppCompatActivity() {
             val intent = Intent(this,ChooseService::class.java)
             startActivity(intent)
         }
+        binding.homePhoto.setOnClickListener{
+            val intent = Intent(this,Account::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -9,15 +9,15 @@
 
     <ImageButton
         android:id="@+id/chooseServiceBackButton"
+        style="@style/ButtonsStyle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/ButtonsStyle2"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/back_button"
+        android:layout_marginTop="4dp"
         android:contentDescription="@string/atr_s"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:src="@drawable/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/chooseTitle"

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/back_home">
+
+    <ImageButton
+        android:id="@+id/accountBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/ButtonsStyle2"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/polygon_white"
+        android:backgroundTint="#fff"
+        android:contentDescription="@string/atr_s"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/homeUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/homePhoto"
+        app:layout_constraintTop_toTopOf="@id/homePhoto"
+        app:layout_constraintBottom_toBottomOf="@+id/homePhoto"
+        android:layout_marginEnd="16dp"
+        android:text="Fulanita"
+        style="@style/FabulashText"
+        android:textColor="@color/white"
+        android:textSize="30sp"/>
+
+    <ImageButton
+        android:id="@+id/homePhoto"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/accountBackButton"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/user_photo"
+        android:contentDescription="@string/foto_del_usuario"
+        style="@style/ButtonsStyle2"/>
+
+    <FrameLayout
+        android:id="@+id/layoutButtons1"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homePhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="60dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/administrar_tarjetas"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/administrar_tarjetas"
+            android:gravity="start|center_vertical"
+            style="@style/ButtonsStyle3"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/layoutButtons1"
+        app:layout_constraintTop_toBottomOf="@+id/layoutButtons1"
+        app:layout_constraintStart_toStartOf="@+id/layoutButtons1"
+        android:visibility="gone"
+        android:layout_marginHorizontal="30dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar Tarjeta"
+            app:icon="@drawable/add_button"
+            style="@style/ButtonsStyle5"
+            android:gravity="start|center_vertical"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modificar Tarjetas"
+            app:icon="@drawable/edit_button"
+            style="@style/ButtonsStyle5"
+            android:gravity="start|center_vertical"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eliminar Tarjetas"
+            app:icon="@drawable/delete_button"
+            style="@style/ButtonsStyle5"
+            android:gravity="start|center_vertical"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <Button
+            android:id="@+id/view_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver Tarjetas"
+            app:icon="@drawable/view_button"
+            style="@style/ButtonsStyle5"
+            android:gravity="start|center_vertical"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutButtons2"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/configuracion_cuenta"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/configuracion_cuenta"
+            android:gravity="start|center_vertical"
+            style="@style/ButtonsStyle3"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/layoutButtons3"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutButtons2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/mis_reseñas"
+                android:textColor="@color/white"
+                style="@style/ButtonsStyle3"
+                android:clickable="false"
+                android:backgroundTint="@color/night" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/b3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/mis_reseñas"
+            android:gravity="start|center_vertical"
+            style="@style/ButtonsStyle3"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame1"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/frame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/darkpurple"
+            android:layout_marginTop="-4dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/orange"
+            android:layout_marginTop="-3dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginTop="-2dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            style="@style/ButtonsStyle1"/>
+
+
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/darkpurple"
+            android:layout_marginTop="-4dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/orange"
+            android:layout_marginTop="-3dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonsStyle1"
+            android:backgroundTint="@color/yellow"
+            android:layout_marginTop="-2dp"
+            android:enabled="false"
+            android:text="none"/>
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/eliminar_cuenta"
+            style="@style/ButtonsStyle1.5"/>
+
+
+    </FrameLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
