@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardBackgroundColor="@color/night"
+        app:cardCornerRadius="12dp"
+        android:layout_marginVertical="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imgEmployee"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/image_lashes"
+                android:padding="8dp"/>
+
+            <TextView
+                android:id="@+id/nameEmployee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/imgEmployee"
+                app:layout_constraintBottom_toTopOf="@id/expEmployee"
+                app:layout_constraintStart_toStartOf="@id/expEmployee"
+                tools:text="Nombre"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/day"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/expEmployee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/imgEmployee"
+                app:layout_constraintTop_toTopOf="@id/imgEmployee"
+                app:layout_constraintBottom_toBottomOf="@id/imgEmployee"
+                android:layout_marginStart="16dp"
+                tools:text="Experiencia"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/day"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/starsEmployee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/expEmployee"
+                app:layout_constraintBottom_toBottomOf="@id/imgEmployee"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="⭐⭐⭐⭐⭐"
+                android:layout_marginEnd="32dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

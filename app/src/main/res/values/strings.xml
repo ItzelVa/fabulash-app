@@ -75,4 +75,12 @@
     <string name="i_a">I.A</string>
     <string name="ya_conoce_su_estilo_preferido">¿Ya conoce su estilo preferido?</string>
     <string name="filtrar_por">Filtrar por:</string>
+    <string name="buscar_por_nombre">Buscar por nombre</string>
+    <string name="elija_personal">Elija Personal</string>
+    <string-array name="filters">
+        <item>Natural</item>
+        <item>Grande</item>
+        <item>Pequeño</item>
+        <item>Exótico</item>
+    </string-array>
 </resources>
