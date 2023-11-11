@@ -26,10 +26,27 @@ class Account : AppCompatActivity() {
         val logout = findViewById<Button>(R.id.logoutButton)
         val delete = findViewById<Button>(R.id.deleteButton)
         val viewCards = findViewById<Button>(R.id.view_button)
+        val addCard = findViewById<Button>(R.id.add_button)
+        val deleteCard = findViewById<Button>(R.id.delete_button)
+        val modCard = findViewById<Button>(R.id.edit_button)
+
+        deleteCard.setOnClickListener {
+            val view = Intent(this,DeleteCard::class.java)
+            startActivity(view)
+        }
 
         viewCards.setOnClickListener{
-            Toast.makeText(this,"dentro",Toast.LENGTH_SHORT).show()
             val view = Intent(this,ViewCards::class.java)
+            startActivity(view)
+        }
+
+        addCard.setOnClickListener {
+            val view = Intent(this,RegisterCard::class.java)
+            startActivity(view)
+        }
+
+        modCard.setOnClickListener {
+            val view = Intent(this,ModifyCard::class.java)
             startActivity(view)
         }
 
@@ -72,6 +89,8 @@ class Account : AppCompatActivity() {
                 .setCancelable(true)
                 .show()
         }
+
+
 
 
     }

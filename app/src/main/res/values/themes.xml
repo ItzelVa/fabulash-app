@@ -34,6 +34,30 @@
         <item name="android:shadowRadius">3</item>
     </style>
 
+    <style name="ButtonsStyle1_Green">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/spicy</item>
+        <item name="backgroundTint">@color/statusGreen</item>
+        <item name="height">43dp</item>
+        <item name="android:width">155dp</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+
+    <style name="ButtonsStyle1_Pink">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/spicy</item>
+        <item name="backgroundTint">@color/pink</item>
+        <item name="height">43dp</item>
+        <item name="android:width">155dp</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+
     <style name="ButtonsStyle1.5">
         <item name="cornerRadius">12dp</item>
         <item name="android:textSize">24sp</item>
@@ -173,7 +197,7 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="CardsView" parent="Widget.MaterialComponents.CardView">
+    <style name="CardsView" parent="CardView">
         <item name="android:foreground">@drawable/card_gradient</item>
 >>>>>>> Stashed changes
     </style>

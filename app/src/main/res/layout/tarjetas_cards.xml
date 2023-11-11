@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    android:focusable="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/night"
+        android:foreground="@color/night"
+        >
+        <androidx.cardview.widget.CardView
+            style="@style/CardsView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/card_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/mcv"
+        app:layout_constraintTop_toTopOf="@+id/mcv"
+        tools:text="VISA"
+        android:fontFamily="@font/montserratbold"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:paddingEnd="5dp"/>
+
+    <TextView
+        android:id="@+id/card_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/mcv"
+        app:layout_constraintTop_toTopOf="@+id/mcv"
+        app:layout_constraintBottom_toBottomOf="@+id/mcv"
+        tools:text="000 000 000 0000"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginStart="16dp"/>
+
+    <ImageView
+        android:id="@+id/card_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/card_number"
+        app:layout_constraintBottom_toTopOf="@+id/card_number"
+        android:src="@drawable/credit_icon"
+        app:tint="@color/white"
+        android:contentDescription="imagen de tarjeta" />
+
+    <LinearLayout
+        android:id="@+id/nameLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/mcv"
+        app:layout_constraintTop_toBottomOf="@+id/card_number"
+        app:layout_constraintBottom_toBottomOf="@+id/mcv"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/card_nameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre"
+            android:fontFamily="@font/montserratregular"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/card_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Fulanita Fulana"
+            android:fontFamily="@font/montserratregular"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/cvcLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/mcv"
+        app:layout_constraintTop_toBottomOf="@+id/card_number"
+        app:layout_constraintBottom_toBottomOf="@+id/mcv"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/card_cvcTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cvc"
+            android:fontFamily="@font/montserratregular"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/card_cvc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="345"
+            android:fontFamily="@font/montserratregular"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/dateLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/cvcLL"
+        app:layout_constraintTop_toBottomOf="@+id/card_number"
+        app:layout_constraintBottom_toBottomOf="@+id/mcv"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/card_dateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fecha"
+            android:fontFamily="@font/montserratregular"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/card_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="11/24"
+            android:fontFamily="@font/montserratregular"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

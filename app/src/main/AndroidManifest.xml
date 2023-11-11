@@ -15,6 +15,18 @@
         android:theme="@style/Theme.Fabulash"
         tools:targetApi="31">
         <activity
+            android:name=".ModifyCardData"
+            android:exported="false" />
+        <activity
+            android:name=".ModifyCard"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteCard"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterCard"
+            android:exported="false" />
+        <activity
             android:name=".ChooseEmployee"
             android:exported="false" />
         <activity

@@ -83,7 +83,7 @@
         <item>Pequeño</item>
         <item>Exótico</item>
     </string-array>
-=======
+    =======
     <string name="administrar_tarjetas">Administrar Tarjetas</string>
     <string name="configuracion_cuenta">Configuración de Cuenta</string>
     <string name="mis_reseñas">Mis Reseñas</string>
@@ -95,5 +95,21 @@
     <string name="delete_question">Estas a punto de eliminar tu cuenta</string>
     <string name="delete_details">¿Estas seguro?\nEsta acción no es reversible</string>
     <string name="tarjetas">Tarjetas</string>
->>>>>>> Stashed changes
+    <string name="cvc">CVC</string>
+    <string name="fecha">Fecha</string>
+    <string name="registrar_tarjeta">Registrar Tarjeta</string>
+    <string name="nombreTitular">Nombre del titular</string>
+    <string name="numeroTarjeta">Numero de la tarjeta</string>
+    <string name="fechaTarjeta">MM/YY</string>
+    <string name="cvcTarjeta">CVC</string>
+    <string name="agregar">Agregar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="eliminarSelect">Selecciona la tarjeta a eliminar:</string>
+    <string name="deleteCard_question">Estas a punto de eliminar la tarjeta:</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="tarjetaEliminada">Tarjeta Eliminada</string>
+    <string name="modificar">Modificar</string>
+    <string name="modificarSelect">Selecciona la tarjeta a modificar:</string>
+    <string name="modificar_tarjeta">Modificar Tarjeta</string>
+    >>>>>>> Stashed changes
 </resources>

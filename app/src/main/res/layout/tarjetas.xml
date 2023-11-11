@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/day">
 
     <ImageButton
@@ -41,47 +42,16 @@
         android:layout_marginTop="10dp"
         />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcv"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTarjetas"
+        android:layout_width="0dp"
+        android:layout_height="460dp"
         app:layout_constraintTop_toBottomOf="@+id/tarjetaTitle"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="16dp"
-        >
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/CardsView">
-
-        </androidx.cardview.widget.CardView>
-
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcv2"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mcv"
-        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="16dp"
-        >
+        tools:listitem="@layout/tarjetas_cards"/>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/CardsView">
-
-        </androidx.cardview.widget.CardView>
-
-
-    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/tarjetas_acciones"
@@ -89,13 +59,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mcv2"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerTarjetas"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="16dp"
         android:gravity="center"
         >
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/addTarjeta"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             app:icon="@drawable/add_button"
@@ -106,18 +77,22 @@
             app:backgroundTint="@color/night"/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteTarjeta"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             app:icon="@drawable/delete_button"
-            app:iconGravity="textStart"
+            app:iconGravity="textEnd"
+            android:textSize="@dimen/null_reference"
             app:iconSize="25dp"
             app:backgroundTint="@color/night"/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/modifyTarjeta"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             app:icon="@drawable/edit_button"
             app:iconGravity="textStart"
+            android:textSize="@dimen/null_reference"
             app:iconSize="25dp"
             app:backgroundTint="@color/night"
             />
