@@ -1,6 +1,8 @@
 package com.itzel.fabulash
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -13,13 +15,18 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class Account : AppCompatActivity() {
     private lateinit var binding: AccountBinding
+    private lateinit var sharedPreferences : SharedPreferences
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = AccountBinding.inflate(layoutInflater)
-
-        setContentView(binding.root)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.account)
+        binding = AccountBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        sharedPreferences = getSharedPreferences("session", Context.MODE_PRIVATE)
+
+        with(sharedPreferences){
+            binding.homeUser.text = getString("name", "Invitad@")
+        }
 
         val backButton = findViewById<ImageButton>(R.id.accountBackButton)
         val addButton = findViewById<Button>(R.id.b1)
@@ -75,7 +82,16 @@ class Account : AppCompatActivity() {
             MaterialAlertDialogBuilder(this,R.style.AlertDialogTheme)
                 .setTitle(R.string.logout_question)
                 .setNeutralButton(R.string.no, {dialog, i -> })
-                .setPositiveButton(R.string.si, {dialog, i -> })
+                .setPositiveButton(R.string.si, {dialog, i ->
+                    with(sharedPreferences.edit()){
+                        remove("id_user")
+                        remove("name")
+                        apply()
+                    }
+                    this@Account.finish()
+                    val view = Intent(this,MainActivity::class.java)
+                    startActivity(view)
+                })
                 .setCancelable(true)
                 .show()
         }

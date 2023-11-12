@@ -1,6 +1,8 @@
 package com.itzel.fabulash
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -18,12 +20,14 @@ import retrofit2.Response
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        sharedPreferences = getSharedPreferences("session", Context.MODE_PRIVATE)
 
         binding.loginRegister.setOnClickListener {
             val intent = Intent(this, Register::class.java)
@@ -44,6 +48,7 @@ class Login : AppCompatActivity() {
     }
 
     private fun sendDataToServer() {
+
         if (validateForm()){
             val login = LoginData(
                 binding.loginPwd.text.toString(),
@@ -56,10 +61,16 @@ class Login : AppCompatActivity() {
                     response: Response<SesionResponse>
                 ) {
                     if(response.isSuccessful){
-                        Toast.makeText(
-                            this@Login,
-                            "Bienvenid@ ${response.body()?.data?.nombre} ${response.body()?.data?.apellido}",
-                            Toast.LENGTH_LONG).show()
+                        // Save info into prefereces
+                        with(sharedPreferences.edit()){
+                            putInt("id_user", response.body()?.data?.id!!)
+                            putString("name", response.body()?.data?.nombre)
+                            apply()
+                        }
+
+                        finish()
+                        val intent = Intent(this@Login, Welcome::class.java)
+                        startActivity(intent)
                     } else {
                         binding.loginEmail.error = "Correo y/o contraseña incorrectos"
                     }
@@ -72,6 +83,9 @@ class Login : AppCompatActivity() {
                         Toast.LENGTH_LONG).show()
                 }
             })
+
+            //Redirect to next activity
+
 
 //            val dataStr = "Email:${binding.loginEmail.text.toString()}," +
 //                    "Contrasena:${binding.loginPwd.text.toString()}"
