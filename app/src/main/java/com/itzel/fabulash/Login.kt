@@ -5,9 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
+import android.widget.Toast
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.text.isDigitsOnly
 import com.itzel.fabulash.databinding.ActivityLoginBinding
+import com.itzel.fabulash.models.LoginData
+import com.itzel.fabulash.models.SesionResponse
+import com.itzel.fabulash.network.Api
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -38,12 +45,40 @@ class Login : AppCompatActivity() {
 
     private fun sendDataToServer() {
         if (validateForm()){
-            val dataStr = "Email:${binding.loginEmail.text.toString()}," +
-                    "Contrasena:${binding.loginPwd.text.toString()}"
+            val login = LoginData(
+                binding.loginPwd.text.toString(),
+                binding.loginEmail.text.toString()
+            )
 
-            Log.i("DATA SENT",dataStr)
-            val intent = Intent(this, Welcome::class.java)
-            startActivity(intent)
+            Api.request.login(login).enqueue(object : Callback<SesionResponse>{
+                override fun onResponse(
+                    call: Call<SesionResponse>,
+                    response: Response<SesionResponse>
+                ) {
+                    if(response.isSuccessful){
+                        Toast.makeText(
+                            this@Login,
+                            "Bienvenid@ ${response.body()?.data?.nombre} ${response.body()?.data?.apellido}",
+                            Toast.LENGTH_LONG).show()
+                    } else {
+                        binding.loginEmail.error = "Correo y/o contraseña incorrectos"
+                    }
+                }
+
+                override fun onFailure(call: Call<SesionResponse>, t: Throwable) {
+                    Toast.makeText(
+                        this@Login,
+                        "Ocurrió un error con la api",
+                        Toast.LENGTH_LONG).show()
+                }
+            })
+
+//            val dataStr = "Email:${binding.loginEmail.text.toString()}," +
+//                    "Contrasena:${binding.loginPwd.text.toString()}"
+//
+//            Log.i("DATA SENT",dataStr)
+//            val intent = Intent(this, Welcome::class.java)
+//            startActivity(intent)
         }
     }
 
