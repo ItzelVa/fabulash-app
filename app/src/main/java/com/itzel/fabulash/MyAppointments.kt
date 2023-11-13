@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.itzel.fabulash.adapter.DataMyAppointments
+import com.itzel.fabulash.models.DataMyAppointments
 import com.itzel.fabulash.adapter.DataMyAppointmentsAdapter
 import com.itzel.fabulash.databinding.ActivityMyAppointmentsBinding
 import com.itzel.fabulash.events.OnClickListenerMyAppointments

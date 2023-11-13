@@ -12,6 +12,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.itzel.fabulash.R
 import com.itzel.fabulash.databinding.CardMyAppointmentsBinding
 import com.itzel.fabulash.events.OnClickListenerMyAppointments
+import com.itzel.fabulash.models.DataMyAppointments
 
 class DataMyAppointmentsAdapter(private var appointments:List<DataMyAppointments>, private val listener: OnClickListenerMyAppointments):
     RecyclerView.Adapter<DataMyAppointmentsAdapter.ViewHolder>() {
