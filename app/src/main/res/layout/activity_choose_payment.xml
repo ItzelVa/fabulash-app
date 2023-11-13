@@ -1,0 +1,1296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChoosePayment"
+    android:background="@color/night">
+
+    <ImageButton
+        android:id="@+id/choosePaymentBackButton"
+        style="@style/ButtonsStyle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/light_back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/atr_s"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/chooseTitle"
+        style="@style/FabulashText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/elija_forma_de_pago"
+        android:textColor="@color/day"
+        android:textSize="50sp"
+        android:layout_marginHorizontal="32dp"
+        android:textAlignment="center"
+        android:lineSpacingExtra="-10dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/choosePaymentBackButton"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/SpinnerStyle"
+        app:layout_constraintTop_toBottomOf="@id/chooseTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/cardBar"
+            style="@style/AutoCompleteTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="Escoja una tarjeta"
+            android:textColor="@color/greyforms" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/c4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/layoutCard"
+        app:layout_constraintEnd_toEndOf="@id/layoutCard"
+        app:layout_constraintTop_toBottomOf="@id/layoutCard"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/darkpurple"
+        app:cardCornerRadius="12dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/dc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/detalles"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"/>
+
+            <TextView
+                android:id="@+id/tc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/dc4"
+                app:layout_constraintTop_toBottomOf="@id/dc4"
+                android:text="@string/servicio"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"/>
+
+            <View
+                android:id="@+id/lc4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tc4"
+                app:layout_constraintEnd_toStartOf="@id/sc4"
+                app:layout_constraintBottom_toBottomOf="@id/tc4"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/sc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tc4"
+                android:text="Pestañas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tlc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tc4"
+                app:layout_constraintTop_toBottomOf="@id/tc4"
+                android:text="@string/pestanas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/llc4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tlc4"
+                app:layout_constraintEnd_toStartOf="@id/lc4"
+                app:layout_constraintBottom_toBottomOf="@id/tlc4"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/lcc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tlc4"
+                android:text="Cat eye"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tec4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tc4"
+                app:layout_constraintTop_toBottomOf="@id/tlc4"
+                android:text="Personal"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lec4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tec4"
+                app:layout_constraintEnd_toStartOf="@id/ecc4"
+                app:layout_constraintBottom_toBottomOf="@id/tec4"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/ecc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tec4"
+                android:text="Karina F."
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tdc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tec4"
+                app:layout_constraintTop_toBottomOf="@id/tec4"
+                android:text="Fecha"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/ldc4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tdc4"
+                app:layout_constraintEnd_toStartOf="@id/dcc4"
+                app:layout_constraintBottom_toBottomOf="@id/tdc4"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/dcc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tdc4"
+                android:text="27-09-23"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/thc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tdc4"
+                app:layout_constraintTop_toBottomOf="@id/tdc4"
+                android:text="Hora"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lhc4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/thc4"
+                app:layout_constraintEnd_toStartOf="@id/hcc4"
+                app:layout_constraintBottom_toBottomOf="@id/thc4"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/hcc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/thc4"
+                android:text="15:00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <View
+                android:id="@+id/ltc4"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thc4"
+                android:background="@color/statusGreen"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:id="@+id/ttc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ltc4"
+                app:layout_constraintStart_toStartOf="@id/dc4"
+                android:text="@string/total"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tpc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/ttc4"
+                app:layout_constraintBottom_toBottomOf="@id/ttc4"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="$500.00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="24sp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/c3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/layoutCard"
+        app:layout_constraintEnd_toEndOf="@id/layoutCard"
+        app:layout_constraintTop_toBottomOf="@id/layoutCard"
+        android:layout_marginTop="19dp"
+        app:cardBackgroundColor="@color/pink"
+        app:cardCornerRadius="12dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/dc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/detalles"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"/>
+
+            <TextView
+                android:id="@+id/tc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/dc3"
+                app:layout_constraintTop_toBottomOf="@id/dc3"
+                android:text="@string/servicio"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"/>
+
+            <View
+                android:id="@+id/lc3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tc3"
+                app:layout_constraintEnd_toStartOf="@id/sc3"
+                app:layout_constraintBottom_toBottomOf="@id/tc3"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/sc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tc3"
+                android:text="Pestañas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tlc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tc3"
+                app:layout_constraintTop_toBottomOf="@id/tc3"
+                android:text="@string/pestanas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/llc3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tlc3"
+                app:layout_constraintEnd_toStartOf="@id/lc3"
+                app:layout_constraintBottom_toBottomOf="@id/tlc3"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/lcc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tlc3"
+                android:text="Cat eye"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tec3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tc3"
+                app:layout_constraintTop_toBottomOf="@id/tlc3"
+                android:text="Personal"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lec3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tec3"
+                app:layout_constraintEnd_toStartOf="@id/ecc3"
+                app:layout_constraintBottom_toBottomOf="@id/tec3"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/ecc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tec3"
+                android:text="Karina F."
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tdc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tec3"
+                app:layout_constraintTop_toBottomOf="@id/tec3"
+                android:text="Fecha"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/ldc3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tdc3"
+                app:layout_constraintEnd_toStartOf="@id/dcc3"
+                app:layout_constraintBottom_toBottomOf="@id/tdc3"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/dcc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tdc3"
+                android:text="27-09-23"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/thc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tdc3"
+                app:layout_constraintTop_toBottomOf="@id/tdc3"
+                android:text="Hora"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lhc3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/thc3"
+                app:layout_constraintEnd_toStartOf="@id/hcc3"
+                app:layout_constraintBottom_toBottomOf="@id/thc3"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/hcc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/thc3"
+                android:text="15:00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <View
+                android:id="@+id/ltc3"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thc3"
+                android:background="@color/statusGreen"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:id="@+id/ttc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ltc3"
+                app:layout_constraintStart_toStartOf="@id/dc3"
+                android:text="@string/total"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tpc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/ttc3"
+                app:layout_constraintBottom_toBottomOf="@id/ttc3"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="$500.00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="24sp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/c2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/layoutCard"
+        app:layout_constraintEnd_toEndOf="@id/layoutCard"
+        app:layout_constraintTop_toBottomOf="@id/layoutCard"
+        android:layout_marginTop="22dp"
+        app:cardBackgroundColor="@color/orange"
+        app:cardCornerRadius="12dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/dc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/detalles"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"/>
+
+            <TextView
+                android:id="@+id/tc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/dc2"
+                app:layout_constraintTop_toBottomOf="@id/dc2"
+                android:text="@string/servicio"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"/>
+
+            <View
+                android:id="@+id/lc2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tc2"
+                app:layout_constraintEnd_toStartOf="@id/sc2"
+                app:layout_constraintBottom_toBottomOf="@id/tc2"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/sc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tc2"
+                android:text="Pestañas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tlc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tc2"
+                app:layout_constraintTop_toBottomOf="@id/tc2"
+                android:text="@string/pestanas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/llc2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tlc2"
+                app:layout_constraintEnd_toStartOf="@id/lc2"
+                app:layout_constraintBottom_toBottomOf="@id/tlc2"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/lcc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tlc2"
+                android:text="Cat eye"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tec2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tc2"
+                app:layout_constraintTop_toBottomOf="@id/tlc2"
+                android:text="Personal"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lec2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tec2"
+                app:layout_constraintEnd_toStartOf="@id/ecc2"
+                app:layout_constraintBottom_toBottomOf="@id/tec2"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/ecc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tec2"
+                android:text="Karina F."
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tdc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tec2"
+                app:layout_constraintTop_toBottomOf="@id/tec2"
+                android:text="Fecha"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/ldc2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tdc2"
+                app:layout_constraintEnd_toStartOf="@id/dcc2"
+                app:layout_constraintBottom_toBottomOf="@id/tdc2"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/dcc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tdc2"
+                tools:text="27-09-23"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/thc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tdc2"
+                app:layout_constraintTop_toBottomOf="@id/tdc2"
+                android:text="Hora"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lhc2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/thc2"
+                app:layout_constraintEnd_toStartOf="@id/hcc2"
+                app:layout_constraintBottom_toBottomOf="@id/thc2"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/hcc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/thc2"
+                android:text="15:00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <View
+                android:id="@+id/ltc2"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thc2"
+                android:background="@color/statusGreen"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:id="@+id/ttc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ltc2"
+                app:layout_constraintStart_toStartOf="@id/dc2"
+                android:text="@string/total"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tpc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/ttc2"
+                app:layout_constraintBottom_toBottomOf="@id/ttc2"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="$500.00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="24sp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/c1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/layoutCard"
+        app:layout_constraintEnd_toEndOf="@id/layoutCard"
+        app:layout_constraintTop_toBottomOf="@id/layoutCard"
+        android:layout_marginTop="25dp"
+        app:cardBackgroundColor="@color/yellow"
+        app:cardCornerRadius="12dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/dc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/detalles"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"/>
+
+            <TextView
+                android:id="@+id/tc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/dc1"
+                app:layout_constraintTop_toBottomOf="@id/dc1"
+                android:text="@string/servicio"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"/>
+
+            <View
+                android:id="@+id/lc1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tc1"
+                app:layout_constraintEnd_toStartOf="@id/sc1"
+                app:layout_constraintBottom_toBottomOf="@id/tc1"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/sc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tc1"
+                android:text="Pestañas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tlc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tc1"
+                app:layout_constraintTop_toBottomOf="@id/tc1"
+                android:text="@string/pestanas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/llc1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tlc1"
+                app:layout_constraintEnd_toStartOf="@id/lc1"
+                app:layout_constraintBottom_toBottomOf="@id/tlc1"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/lcc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tlc1"
+                android:text="Cat eye"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tec1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tc1"
+                app:layout_constraintTop_toBottomOf="@id/tlc1"
+                android:text="Personal"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lec1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tec1"
+                app:layout_constraintEnd_toStartOf="@id/ecc1"
+                app:layout_constraintBottom_toBottomOf="@id/tec1"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/ecc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tec1"
+                android:text="Karina F."
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tdc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tec1"
+                app:layout_constraintTop_toBottomOf="@id/tec1"
+                android:text="Fecha"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/ldc1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tdc1"
+                app:layout_constraintEnd_toStartOf="@id/dcc1"
+                app:layout_constraintBottom_toBottomOf="@id/tdc1"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/dcc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tdc1"
+                tools:text="27-09-23"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/thc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tdc1"
+                app:layout_constraintTop_toBottomOf="@id/tdc1"
+                android:text="Hora"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lhc1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/thc1"
+                app:layout_constraintEnd_toStartOf="@id/hcc1"
+                app:layout_constraintBottom_toBottomOf="@id/thc1"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/hcc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/thc1"
+                android:text="15:00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <View
+                android:id="@+id/ltc1"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thc1"
+                android:background="@color/statusGreen"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:id="@+id/ttc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ltc1"
+                app:layout_constraintStart_toStartOf="@id/dc1"
+                android:text="@string/total"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"
+                android:layout_marginTop="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tpc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/ttc1"
+                app:layout_constraintBottom_toBottomOf="@id/ttc1"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="$500.00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="24sp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/paymentResume"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/layoutCard"
+        app:layout_constraintEnd_toEndOf="@id/layoutCard"
+        app:layout_constraintTop_toBottomOf="@id/layoutCard"
+        android:layout_marginTop="28dp"
+        app:cardBackgroundColor="@color/day"
+        app:cardCornerRadius="12dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/detailsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/detalles"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"/>
+
+            <TextView
+                android:id="@+id/titleSevice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/detailsTitle"
+                app:layout_constraintTop_toBottomOf="@id/detailsTitle"
+                android:text="@string/servicio"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"/>
+
+            <View
+                android:id="@+id/lineService"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/titleSevice"
+                app:layout_constraintEnd_toStartOf="@id/serviceChosen"
+                app:layout_constraintBottom_toBottomOf="@id/titleSevice"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/serviceChosen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/titleSevice"
+                tools:text="Pestañas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/titleLashes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/titleSevice"
+                app:layout_constraintTop_toBottomOf="@id/titleSevice"
+                android:text="@string/pestanas"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lineLashes"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/titleLashes"
+                app:layout_constraintEnd_toStartOf="@id/lashesChosen"
+                app:layout_constraintBottom_toBottomOf="@id/titleLashes"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/lashesChosen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/titleLashes"
+                tools:text="Cat eye"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/titleEmployee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/titleSevice"
+                app:layout_constraintTop_toBottomOf="@id/titleLashes"
+                android:text="Personal"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lineEmployee"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/titleEmployee"
+                app:layout_constraintEnd_toStartOf="@id/employeeChosen"
+                app:layout_constraintBottom_toBottomOf="@id/titleEmployee"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/employeeChosen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/titleEmployee"
+                tools:text="Karina F."
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/titleDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/titleEmployee"
+                app:layout_constraintTop_toBottomOf="@id/titleEmployee"
+                android:text="Fecha"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lineDate"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/titleDate"
+                app:layout_constraintEnd_toStartOf="@id/dateChosen"
+                app:layout_constraintBottom_toBottomOf="@id/titleDate"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/dateChosen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/titleDate"
+                tools:text="27-09-23"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/titleHour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/titleDate"
+                app:layout_constraintTop_toBottomOf="@id/titleDate"
+                android:text="Hora"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:id="@+id/lineHour"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/titleHour"
+                app:layout_constraintEnd_toStartOf="@id/hourChosen"
+                app:layout_constraintBottom_toBottomOf="@id/titleHour"
+                android:background="@color/night"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:id="@+id/hourChosen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/titleHour"
+                tools:text="15:00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="18sp"
+                />
+
+            <View
+                android:id="@+id/lineTotal"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleHour"
+                android:background="@color/statusGreen"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:id="@+id/titleTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/lineTotal"
+                app:layout_constraintStart_toStartOf="@id/detailsTitle"
+                android:text="@string/total"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="28sp"
+                android:layout_marginTop="16dp"
+                />
+            
+            <TextView
+                android:id="@+id/totalPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/titleTotal"
+                app:layout_constraintBottom_toBottomOf="@id/titleTotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="$500.00"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@color/night"
+                android:textSize="24sp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Cancelar"
+        style="@style/ButtonsStyle1.1"
+        android:backgroundTint="@color/orange"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/cancelButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Confirmar"
+        style="@style/ButtonsStyle1.1"
+        android:backgroundTint="@color/statusGreen"
+        android:layout_marginBottom="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

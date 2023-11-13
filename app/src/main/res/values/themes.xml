@@ -65,6 +65,15 @@
         <item name="backgroundTint">@color/pink</item>
         <item name="height">43dp</item>
         <item name="android:width">155dp</item>
+    </style>
+    <style name="ButtonsStyle1.1">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/spicy</item>
+        <item name="backgroundTint">@color/night</item>
+        <item name="height">43dp</item>
+        <item name="android:width">200dp</item>
+
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
         <item name="android:shadowRadius">3</item>
@@ -176,7 +185,7 @@
     <style name="AutoCompleteTextViewStyle">
         <item name="android:popupBackground">@android:color/white</item> <!-- Fondo blanco para la lista desplegable -->
     </style>
-=======
+
     <style name="AlertDialogTheme">
         <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>
         <item name="buttonBarNeutralButtonStyle">@style/Alert.Button.Neutral</item>
@@ -199,7 +208,24 @@
 
     <style name="CardsView" parent="CardView">
         <item name="android:foreground">@drawable/card_gradient</item>
->>>>>>> Stashed changes
+
+    </style>
+
+    <style name="CalendarMonth">
+        <item name="android:textColor">@color/day</item>
+    </style>
+
+    <style name="CalendarDay">
+        <item name="android:textColor">@color/night</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Calendar">
+        <item name="android:colorAccent">@color/night</item>
+        <item name="android:headerMonthTextAppearance">@style/CalendarMonth</item>
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/spicy</item>
+        <item name="android:dateTextAppearance">@style/CalendarDay</item>
     </style>
 
     <style name="RatingBar" parent="Theme.MaterialComponents.DayNight">
