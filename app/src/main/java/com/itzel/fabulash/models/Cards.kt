@@ -1,4 +1,4 @@
-package com.itzel.fabulash
+package com.itzel.fabulash.models
 
 data class Cards(
     val name: String,

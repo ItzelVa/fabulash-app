@@ -1,4 +1,4 @@
-package com.itzel.fabulash
+package com.itzel.fabulash.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getColor
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
+import com.itzel.fabulash.models.Cards
+import com.itzel.fabulash.R
 import com.itzel.fabulash.databinding.TarjetasCardsBinding
+import com.itzel.fabulash.events.OnClickListenerDeleteCards
 
 class DeleteCardsAdapter(private val cards: MutableList<Cards>, private val listener: OnClickListenerDeleteCards): RecyclerView.Adapter<DeleteCardsAdapter.ViewHolder> () {
     private lateinit var context : Context

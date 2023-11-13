@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfirmedAppointment"
+    android:background="@drawable/confirmed_back">
+
+    <ImageView
+        android:id="@+id/closedEye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/openedEye"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/closed_eye"/>
+
+    <ImageView
+        android:id="@+id/openedEye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closedEye"
+        android:src="@drawable/dark_open_eye"
+        />
+
+    <TextView
+        android:id="@+id/titleConfirmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/cita_confirmada"
+        style="@style/FabulashText"
+        android:textColor="@color/day"
+        android:lineSpacingExtra="-10dp"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        style="@style/ButtonsStyle1"
+        android:backgroundTint="@color/day"
+        android:text="@string/terminar"
+        android:textColor="@color/night"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

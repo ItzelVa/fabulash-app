@@ -4,20 +4,20 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.textfield.TextInputEditText
+import com.itzel.fabulash.adapter.DeleteCardsAdapter
 import com.itzel.fabulash.databinding.ActivityDeleteCardBinding
 import com.itzel.fabulash.databinding.TarjetasCardsBinding
+import com.itzel.fabulash.events.OnClickListenerDeleteCards
+import com.itzel.fabulash.models.Cards
 
-class DeleteCard : AppCompatActivity(),OnClickListenerDeleteCards{
+class DeleteCard : AppCompatActivity(), OnClickListenerDeleteCards {
 
     private lateinit var linearLayoutManager: RecyclerView.LayoutManager
     private lateinit var binding: ActivityDeleteCardBinding

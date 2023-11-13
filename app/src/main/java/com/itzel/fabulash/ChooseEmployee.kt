@@ -1,20 +1,32 @@
 package com.itzel.fabulash
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.itzel.fabulash.adapter.EmployeeAdapter
 import com.itzel.fabulash.databinding.ActivityChooseEmployeeBinding
+import com.itzel.fabulash.events.OnClickListenerEmployee
+import com.itzel.fabulash.models.Employee
 
-class ChooseEmployee : AppCompatActivity(),OnClickListenerEmployee {
+class ChooseEmployee : AppCompatActivity(), OnClickListenerEmployee {
 
     private lateinit var binding: ActivityChooseEmployeeBinding
 
     override fun onClick(employee: Employee) {
         val dataStr = "Nombre:${employee.nombre}, Experiencia:${employee.experiencia}, Estrellas:${employee.estrellas},URL:${employee.img}"
         Log.i("DATA SENT EMPLOYEE",dataStr)
+
+        val sharedPreferences = getSharedPreferences("MySharedPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("chosenEmployee", employee.nombre)
+        editor.apply()
+
+        val intent=Intent(this, ChooseAppointment::class.java)
+        startActivity(intent)
     }
 
     private lateinit var employeeAdapter : EmployeeAdapter
@@ -30,11 +42,9 @@ class ChooseEmployee : AppCompatActivity(),OnClickListenerEmployee {
         binding.recyclerEmployee.apply {
             layoutManager = linearLayoutManager
             adapter =employeeAdapter
+        }
+
     }
-
-
-}
-
     override fun onStart() {
         super.onStart()
         binding.chooseEmployeeBackButton.setOnClickListener{

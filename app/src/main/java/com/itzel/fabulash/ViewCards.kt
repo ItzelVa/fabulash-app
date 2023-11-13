@@ -7,9 +7,12 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.itzel.fabulash.adapter.ViewCardsAdapter
 import com.itzel.fabulash.databinding.TarjetasBinding
+import com.itzel.fabulash.events.OnClickListenerCards
+import com.itzel.fabulash.models.Cards
 
-class ViewCards : AppCompatActivity(),OnClickListenerCards {
+class ViewCards : AppCompatActivity(), OnClickListenerCards {
     private lateinit var linearLayoutManager: RecyclerView.LayoutManager
     private lateinit var binding: TarjetasBinding
     private lateinit var cardAdapter: ViewCardsAdapter

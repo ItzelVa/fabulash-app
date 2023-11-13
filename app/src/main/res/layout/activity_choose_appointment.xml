@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseAppointment"
+    android:background="@drawable/background_appointment">
+
+    <ImageButton
+        android:id="@+id/chooseAppointmentBackButton"
+        style="@style/ButtonsStyle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/atr_s"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/chooseTitle"
+        style="@style/FabulashText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/elija_cita"
+        android:textColor="@color/night"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/chooseAppointmentBackButton"/>
+
+    <DatePicker
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/chooseTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:theme="@style/Calendar"
+        />
+
+    <TextView
+        android:id="@+id/tvDisponibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/calendar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="@color/day"
+        android:text="Disponible"
+        android:textSize="20sp"
+        android:layout_marginTop="-8dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/colorDisp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@id/tvDisponibility"
+        app:layout_constraintTop_toTopOf="@id/tvDisponibility"
+        app:layout_constraintBottom_toBottomOf="@id/tvDisponibility"
+        android:layout_marginStart="16sp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="50dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutHour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/SpinnerStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/colorDisp"
+        app:layout_constraintTop_toTopOf="@id/colorDisp"
+        app:layout_constraintBottom_toBottomOf="@id/colorDisp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="32dp"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/hourBar"
+            style="@style/AutoCompleteTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="Hora"
+            android:textColor="@color/greyforms" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/color1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="@id/tvDisponibility"
+        app:layout_constraintTop_toBottomOf="@id/layoutHour"
+        android:layout_marginStart="16sp"
+        app:cardBackgroundColor="@color/lightOrange"
+        app:cardCornerRadius="50dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/color1"
+        app:layout_constraintTop_toTopOf="@id/color1"
+        app:layout_constraintBottom_toBottomOf="@id/color1"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="@color/day"
+        android:text="Con poca disponibilidad"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/color2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="@id/tvDisponibility"
+        app:layout_constraintTop_toBottomOf="@id/color1"
+        android:layout_marginStart="16sp"
+        app:cardBackgroundColor="@color/yellow"
+        app:cardCornerRadius="50dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/color1"
+        app:layout_constraintTop_toTopOf="@id/color2"
+        app:layout_constraintBottom_toBottomOf="@id/color2"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="@color/day"
+        android:text="Sin disponibilidad"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/color3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="@id/tvDisponibility"
+        app:layout_constraintTop_toBottomOf="@id/color2"
+        android:layout_marginStart="16sp"
+        app:cardBackgroundColor="@color/statusGreen"
+        app:cardCornerRadius="50dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/color3"
+        app:layout_constraintTop_toTopOf="@id/color3"
+        app:layout_constraintBottom_toBottomOf="@id/color3"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="@color/day"
+        android:text="Completamente libre"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/ButtonsStyle1"
+        android:text="@string/siguiente"
+        android:backgroundTint="@color/day"
+        android:textColor="@color/night"
+        android:layout_marginBottom="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

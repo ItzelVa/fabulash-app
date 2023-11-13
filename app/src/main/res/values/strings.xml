@@ -77,13 +77,13 @@
     <string name="filtrar_por">Filtrar por:</string>
     <string name="buscar_por_nombre">Buscar por nombre</string>
     <string name="elija_personal">Elija Personal</string>
+    <string name="elija_cita">Elija Cita</string>
     <string-array name="filters">
         <item>Natural</item>
         <item>Grande</item>
         <item>Pequeño</item>
         <item>Exótico</item>
     </string-array>
-    =======
     <string name="administrar_tarjetas">Administrar Tarjetas</string>
     <string name="configuracion_cuenta">Configuración de Cuenta</string>
     <string name="mis_reseñas">Mis Reseñas</string>
@@ -111,5 +111,15 @@
     <string name="modificar">Modificar</string>
     <string name="modificarSelect">Selecciona la tarjeta a modificar:</string>
     <string name="modificar_tarjeta">Modificar Tarjeta</string>
-    >>>>>>> Stashed changes
+
+    <string name="title_activity_choose_payment">ChoosePayment</string>
+    <string name="detalles">Detalles</string>
+    <string name="servicio">Servicio</string>
+    <string name="pestanas">Pestañas</string>
+    <string name="total">Total</string>
+    <string name="elija_forma_de_pago">Elija Forma de Pago</string>
+    <string name="cita_confirmada">¡Cita Confirmada!</string>
+    <string name="terminar">Terminar</string>
+    <string name="mis_citas">Mis Citas</string>
+
 </resources>
