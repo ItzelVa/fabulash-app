@@ -9,7 +9,9 @@ import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.itzel.fabulash.adapters.LashesAdapter
 import com.itzel.fabulash.databinding.ActivityChooseLashesBinding
+import com.itzel.fabulash.events.OnClickListener
 
 class ChooseLashes : AppCompatActivity(), OnClickListener {
     private lateinit var binding : ActivityChooseLashesBinding

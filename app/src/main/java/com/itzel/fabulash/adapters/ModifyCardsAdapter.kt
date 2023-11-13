@@ -1,4 +1,4 @@
-package com.itzel.fabulash
+package com.itzel.fabulash.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
+import com.itzel.fabulash.Cards
+import com.itzel.fabulash.events.OnClickListenerModifyCards
+import com.itzel.fabulash.R
 import com.itzel.fabulash.databinding.TarjetasCardsBinding
 
 class ModifyCardsAdapter (private val cards: MutableList<Cards>, private val listener: OnClickListenerModifyCards): RecyclerView.Adapter<ModifyCardsAdapter.ViewHolder> ()  {
@@ -23,7 +26,7 @@ class ModifyCardsAdapter (private val cards: MutableList<Cards>, private val lis
             }
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModifyCardsAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
         val view = LayoutInflater.from(context).inflate(R.layout.tarjetas_cards, parent, false)
         return ViewHolder(view)

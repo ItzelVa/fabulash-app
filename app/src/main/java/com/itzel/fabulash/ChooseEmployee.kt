@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.itzel.fabulash.adapters.EmployeeAdapter
 import com.itzel.fabulash.databinding.ActivityChooseEmployeeBinding
+import com.itzel.fabulash.events.OnClickListenerEmployee
 
-class ChooseEmployee : AppCompatActivity(),OnClickListenerEmployee {
+class ChooseEmployee : AppCompatActivity(), OnClickListenerEmployee {
 
     private lateinit var binding: ActivityChooseEmployeeBinding
 

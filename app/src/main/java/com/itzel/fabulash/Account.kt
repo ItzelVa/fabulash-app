@@ -82,16 +82,14 @@ class Account : AppCompatActivity() {
             MaterialAlertDialogBuilder(this,R.style.AlertDialogTheme)
                 .setTitle(R.string.logout_question)
                 .setNeutralButton(R.string.no, {dialog, i -> })
-                .setPositiveButton(R.string.si, {dialog, i ->
-                    with(sharedPreferences.edit()){
+                .setPositiveButton(R.string.si) { dialog, i ->
+                    with(sharedPreferences.edit()) {
                         remove("id_user")
                         remove("name")
                         apply()
                     }
-                    this@Account.finish()
-                    val view = Intent(this,MainActivity::class.java)
-                    startActivity(view)
-                })
+                    closeActivity()
+                }
                 .setCancelable(true)
                 .show()
         }
@@ -109,6 +107,13 @@ class Account : AppCompatActivity() {
 
 
 
+    }
+
+    private fun closeActivity() {
+        val view = Intent(this, MainActivity::class.java)
+        view.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(view)
+        finish()
     }
 
     override fun onStart() {

@@ -7,16 +7,15 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.itzel.fabulash.databinding.ActivityDeleteCardBinding
+import com.itzel.fabulash.adapters.ModifyCardsAdapter
 import com.itzel.fabulash.databinding.ActivityModifyCardBinding
 import com.itzel.fabulash.databinding.TarjetasCardsBinding
+import com.itzel.fabulash.events.OnClickListenerModifyCards
 
-class ModifyCard : AppCompatActivity(),OnClickListenerModifyCards {
+class ModifyCard : AppCompatActivity(), OnClickListenerModifyCards {
     private lateinit var linearLayoutManager: RecyclerView.LayoutManager
     private lateinit var binding: ActivityModifyCardBinding
     private lateinit var cardAdapter: ModifyCardsAdapter

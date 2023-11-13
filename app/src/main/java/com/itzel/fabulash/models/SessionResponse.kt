@@ -1,6 +1,6 @@
 package com.itzel.fabulash.models
 
-data class SesionResponse(
-    val `data`: SesionData,
+data class SessionResponse(
+    val `data`: SessionData,
     val message: String
 )

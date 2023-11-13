@@ -5,14 +5,10 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
-import android.util.Log
 import android.widget.Toast
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.core.text.isDigitsOnly
 import com.itzel.fabulash.databinding.ActivityLoginBinding
 import com.itzel.fabulash.models.LoginData
-import com.itzel.fabulash.models.SesionResponse
+import com.itzel.fabulash.models.SessionResponse
 import com.itzel.fabulash.network.Api
 import retrofit2.Call
 import retrofit2.Callback
@@ -55,16 +51,19 @@ class Login : AppCompatActivity() {
                 binding.loginEmail.text.toString()
             )
 
-            Api.request.login(login).enqueue(object : Callback<SesionResponse>{
+            Api.request.login(login).enqueue(object : Callback<SessionResponse>{
                 override fun onResponse(
-                    call: Call<SesionResponse>,
-                    response: Response<SesionResponse>
+                    call: Call<SessionResponse>,
+                    response: Response<SessionResponse>
                 ) {
                     if(response.isSuccessful){
                         // Save info into prefereces
                         with(sharedPreferences.edit()){
                             putInt("id_user", response.body()?.data?.id!!)
                             putString("name", response.body()?.data?.nombre)
+                            putString("lastname", response.body()?.data?.apellido)
+                            putString("email", response.body()?.data?.correo_electronico)
+                            putString("phone", response.body()?.data?.telefono)
                             apply()
                         }
 
@@ -73,10 +72,11 @@ class Login : AppCompatActivity() {
                         startActivity(intent)
                     } else {
                         binding.loginEmail.error = "Correo y/o contraseña incorrectos"
+                        binding.loginPwd.error = "Correo y/o contraseña incorrectos"
                     }
                 }
 
-                override fun onFailure(call: Call<SesionResponse>, t: Throwable) {
+                override fun onFailure(call: Call<SessionResponse>, t: Throwable) {
                     Toast.makeText(
                         this@Login,
                         "Ocurrió un error con la api",

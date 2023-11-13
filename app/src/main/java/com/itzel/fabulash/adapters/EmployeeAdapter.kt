@@ -1,4 +1,4 @@
-package com.itzel.fabulash
+package com.itzel.fabulash.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.itzel.fabulash.Employee
+import com.itzel.fabulash.events.OnClickListenerEmployee
+import com.itzel.fabulash.R
 import com.itzel.fabulash.databinding.CardEmployeeBinding
 
 class EmployeeAdapter(private var employees: List<Employee>, private val listener: OnClickListenerEmployee):RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
@@ -14,7 +17,7 @@ class EmployeeAdapter(private var employees: List<Employee>, private val listene
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val binding = CardEmployeeBinding.bind(view)
 
-        fun setListener(employee:Employee){
+        fun setListener(employee: Employee){
             binding.root.setOnClickListener {
                 listener.onClick(employee)
             }

@@ -1,4 +1,4 @@
-package com.itzel.fabulash
+package com.itzel.fabulash.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,15 +7,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.itzel.fabulash.Lashes
+import com.itzel.fabulash.events.OnClickListener
+import com.itzel.fabulash.R
 import com.itzel.fabulash.databinding.CardLashesBinding
 
-class LashesAdapter(private var lashes: List<Lashes>,private val listener: OnClickListener): RecyclerView.Adapter<LashesAdapter.ViewHolder>() {
+class LashesAdapter(private var lashes: List<Lashes>, private val listener: OnClickListener): RecyclerView.Adapter<LashesAdapter.ViewHolder>() {
 
     private lateinit var context : Context
     inner class ViewHolder(view: View):RecyclerView.ViewHolder(view){
         val binding = CardLashesBinding.bind(view)
 
-        fun setListener(lash:Lashes){
+        fun setListener(lash: Lashes){
             binding.root.setOnClickListener {
                 listener.onClick(lash)
             }

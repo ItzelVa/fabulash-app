@@ -9,7 +9,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.itzel.fabulash.databinding.ActivityMainBinding
-import com.itzel.fabulash.models.Usuario
+import com.itzel.fabulash.models.UserData
 import com.itzel.fabulash.network.Api
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,10 +47,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getUsers(){
-        Api.request.getUsers().enqueue(object : Callback<MutableList<Usuario>> {
+        Api.request.getUsers().enqueue(object : Callback<MutableList<UserData>> {
             override fun onResponse(
-                call: Call<MutableList<Usuario>>,
-                response: Response<MutableList<Usuario>>
+                call: Call<MutableList<UserData>>,
+                response: Response<MutableList<UserData>>
             ) {
                 if (response.isSuccessful){
                     response.body()?.let {
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<MutableList<Usuario>>, t: Throwable) {
+            override fun onFailure(call: Call<MutableList<UserData>>, t: Throwable) {
                 Toast.makeText(this@MainActivity, "Error en la api", Toast.LENGTH_LONG)
             }
         })

@@ -1,11 +1,13 @@
-package com.itzel.fabulash
+package com.itzel.fabulash.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.itzel.fabulash.databinding.ActivityDeleteCardBinding
+import com.itzel.fabulash.Cards
+import com.itzel.fabulash.events.OnClickListenerCards
+import com.itzel.fabulash.R
 import com.itzel.fabulash.databinding.TarjetasCardsBinding
 
 class ViewCardsAdapter(private val cards: MutableList<Cards>, private val listener: OnClickListenerCards): RecyclerView.Adapter<ViewCardsAdapter.ViewHolder> () {

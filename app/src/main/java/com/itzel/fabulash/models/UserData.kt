@@ -1,6 +1,6 @@
 package com.itzel.fabulash.models
 
-data class SesionData(
+data class UserData(
     val apellido: String,
     val contrasena: String,
     val correo_electronico: String,
