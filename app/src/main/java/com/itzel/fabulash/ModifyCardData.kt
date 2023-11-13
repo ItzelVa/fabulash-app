@@ -7,9 +7,8 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
-import com.itzel.fabulash.databinding.ActivityModifyCardBinding
 import com.itzel.fabulash.databinding.ActivityModifyCardDataBinding
-import java.lang.Integer.parseInt
+import com.itzel.fabulash.models.Cards
 
 class ModifyCardData : AppCompatActivity() {
     private var pos: Int = 0

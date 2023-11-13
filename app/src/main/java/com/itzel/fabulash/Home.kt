@@ -28,13 +28,20 @@ class Home : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         binding.homeAddAppointment.setOnClickListener {
-            val intent = Intent(this,ChooseService::class.java)
+            val intent = Intent(this, ChooseService::class.java)
             startActivity(intent)
         }
-        binding.homePhoto.setOnClickListener{
-            val intent = Intent(this,Account::class.java)
+
+        binding.homePhoto.setOnClickListener {
+            val intent = Intent(this, Account::class.java)
             startActivity(intent)
         }
+
+        binding.homeMyAppoint.setOnClickListener {
+            val intent = Intent(this, MyAppointments::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun onResume() {

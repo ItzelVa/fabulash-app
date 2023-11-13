@@ -10,10 +10,11 @@ import android.widget.ImageButton
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.itzel.fabulash.adapters.ModifyCardsAdapter
+import com.itzel.fabulash.adapter.ModifyCardsAdapter
 import com.itzel.fabulash.databinding.ActivityModifyCardBinding
 import com.itzel.fabulash.databinding.TarjetasCardsBinding
 import com.itzel.fabulash.events.OnClickListenerModifyCards
+import com.itzel.fabulash.models.Cards
 
 class ModifyCard : AppCompatActivity(), OnClickListenerModifyCards {
     private lateinit var linearLayoutManager: RecyclerView.LayoutManager

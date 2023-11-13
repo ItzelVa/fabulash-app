@@ -11,10 +11,11 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.itzel.fabulash.adapters.DeleteCardsAdapter
+import com.itzel.fabulash.adapter.DeleteCardsAdapter
 import com.itzel.fabulash.databinding.ActivityDeleteCardBinding
 import com.itzel.fabulash.databinding.TarjetasCardsBinding
 import com.itzel.fabulash.events.OnClickListenerDeleteCards
+import com.itzel.fabulash.models.Cards
 
 class DeleteCard : AppCompatActivity(), OnClickListenerDeleteCards {
 

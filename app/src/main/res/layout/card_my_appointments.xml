@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="12dp"
+        android:layout_marginVertical="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/statusAppointment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardBackgroundColor="@color/statusGreen"
+                app:cardCornerRadius="12dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="4dp"
+                    android:paddingHorizontal="24dp">
+                    <TextView
+                        android:id="@+id/statusText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:text="En proceso"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/three_dots"
+                android:contentDescription="Más"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"/>
+
+            <ImageView
+                android:id="@+id/clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/statusAppointment"
+                app:layout_constraintStart_toStartOf="@id/statusAppointment"
+                android:src="@drawable/clock"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/clock"
+                app:layout_constraintTop_toTopOf="@id/clock"
+                app:layout_constraintBottom_toBottomOf="@id/clock"
+                tools:text="17 de Noviembre"
+                android:layout_marginHorizontal="8dp"
+                android:fontFamily="@font/montserratbold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/fecha"
+                app:layout_constraintStart_toEndOf="@id/fecha"
+                tools:text="02:00 p.m."
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/montserratbold"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/imgPersonal"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:layout_constraintStart_toStartOf="@id/clock"
+                app:layout_constraintTop_toBottomOf="@id/clock"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/image_lashes"/>
+
+            <TextView
+                android:id="@+id/nombrePersonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/imgPersonal"
+                app:layout_constraintBottom_toTopOf="@id/servicio"
+                app:layout_constraintStart_toEndOf="@id/imgPersonal"
+                tools:text="Carmen Perez Días"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/montserratregular"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/servicio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/nombrePersonal"
+                app:layout_constraintBottom_toBottomOf="@id/imgPersonal"
+                app:layout_constraintStart_toStartOf="@id/nombrePersonal"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Retirado de extensiones de pestañas"
+                android:fontFamily="@font/montserratbold"
+                android:textSize="16sp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

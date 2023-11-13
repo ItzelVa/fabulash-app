@@ -28,8 +28,22 @@
             android:name=".RegisterCard"
             android:exported="false" />
         <activity
-            android:name=".ChooseEmployee"
+            android:name=".MyAppointments"
             android:exported="false" />
+        <activity
+            android:name=".ConfirmedAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".ChoosePayment"
+            android:exported="false"
+            android:label="@string/title_activity_choose_payment"
+            android:theme="@style/Theme.Fabulash" />
+        <activity
+            android:name=".ChooseAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseEmployee"
+            android:exported="false"/>
         <activity
             android:name=".ChooseLashes"
             android:exported="false" />
@@ -57,13 +71,17 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".review"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
         </activity>
     </application>
 

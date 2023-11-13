@@ -1,5 +1,6 @@
 package com.itzel.fabulash
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,18 +10,26 @@ import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.itzel.fabulash.adapters.LashesAdapter
+import com.itzel.fabulash.adapter.LashesAdapter
 import com.itzel.fabulash.databinding.ActivityChooseLashesBinding
 import com.itzel.fabulash.events.OnClickListener
+import com.itzel.fabulash.models.Lashes
 
 class ChooseLashes : AppCompatActivity(), OnClickListener {
     private lateinit var binding : ActivityChooseLashesBinding
+    private var nombre : String = "No aplica"
 
     // Click al cardview escogido, obtiene los datos en dataStr, y cambia a la siguiente screen
-    override fun onClick(lash:Lashes) {
+    override fun onClick(lash: Lashes) {
         val dataStr = "Nombre:${lash.nombre}, Estilo:${lash.estilo}, Tamaño:${lash.tamano}"
 
         Log.i("DATA SENT LASHES",dataStr)
+
+        val sharedPreferences = getSharedPreferences("MySharedPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        nombre = lash.nombre
+        editor.putString("chosenLashes", nombre)
+        editor.apply()
 
         val intent=Intent(this,ChooseEmployee::class.java)
         startActivity(intent)
