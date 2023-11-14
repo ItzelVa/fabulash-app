@@ -45,6 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/clock"
+        android:textColor="@color/statusGreen"
+        android:fontFamily="@font/montserratbold"
         app:layout_constraintTop_toTopOf="@id/clock"
         tools:text="17 de noviembre - 2:00 p.m."
         android:layout_marginStart="16dp"
