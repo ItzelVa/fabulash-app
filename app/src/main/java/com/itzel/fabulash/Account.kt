@@ -29,6 +29,7 @@ class Account : AppCompatActivity() {
         val addCard = findViewById<Button>(R.id.add_button)
         val deleteCard = findViewById<Button>(R.id.delete_button)
         val modCard = findViewById<Button>(R.id.edit_button)
+        val myReviews = findViewById<Button>(R.id.b3)
 
         deleteCard.setOnClickListener {
             val view = Intent(this,DeleteCard::class.java)
@@ -50,11 +51,11 @@ class Account : AppCompatActivity() {
             startActivity(view)
         }
 
-        /*binding.viewButton.setOnClickListener {
-            Toast.makeText(this,"dentro",Toast.LENGTH_SHORT).show()
-            val view = Intent(this,ViewCards::class.java)
+        myReviews.setOnClickListener {
+            val view = Intent(this,MyReviews::class.java)
             startActivity(view)
-        }*/
+        }
+
 
         backButton.setOnClickListener{
             val intent = Intent(this,Home::class.java)
