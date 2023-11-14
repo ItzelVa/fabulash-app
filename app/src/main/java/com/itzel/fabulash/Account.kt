@@ -103,17 +103,14 @@ class Account : AppCompatActivity() {
                 .setCancelable(true)
                 .show()
         }
-
-
-
-
     }
 
     private fun closeActivity() {
-        val view = Intent(this, MainActivity::class.java)
-        view.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(view)
-        finish()
+        val intent = Intent(this, MainActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            .putExtra("EXIT", true)
+        finishAffinity()
+        startActivity(intent)
     }
 
     override fun onStart() {

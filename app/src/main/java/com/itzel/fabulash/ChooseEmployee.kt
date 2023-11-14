@@ -41,7 +41,7 @@ class ChooseEmployee : AppCompatActivity(), OnClickListenerEmployee {
 
         binding.recyclerEmployee.apply {
             layoutManager = linearLayoutManager
-            adapter =employeeAdapter
+            adapter = employeeAdapter
         }
 
     }

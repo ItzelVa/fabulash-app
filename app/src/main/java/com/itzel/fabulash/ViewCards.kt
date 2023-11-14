@@ -1,5 +1,6 @@
 package com.itzel.fabulash
 
+import com.itzel.fabulash.adapter.ViewCardsAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -7,7 +8,6 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.itzel.fabulash.adapter.ViewCardsAdapter
 import com.itzel.fabulash.databinding.TarjetasBinding
 import com.itzel.fabulash.events.OnClickListenerCards
 import com.itzel.fabulash.models.Cards

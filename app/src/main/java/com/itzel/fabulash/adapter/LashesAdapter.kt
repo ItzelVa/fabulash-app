@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:app/src/main/java/com/itzel/fabulash/adapters/LashesAdapter.kt
-package com.itzel.fabulash.adapters
-========
 package com.itzel.fabulash.adapter
->>>>>>>> 838de2023057bb11bf853efeaf96532c070ed988:app/src/main/java/com/itzel/fabulash/adapter/LashesAdapter.kt
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -11,11 +7,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-<<<<<<<< HEAD:app/src/main/java/com/itzel/fabulash/adapters/LashesAdapter.kt
-import com.itzel.fabulash.Lashes
-import com.itzel.fabulash.events.OnClickListener
-========
->>>>>>>> 838de2023057bb11bf853efeaf96532c070ed988:app/src/main/java/com/itzel/fabulash/adapter/LashesAdapter.kt
 import com.itzel.fabulash.R
 import com.itzel.fabulash.databinding.CardLashesBinding
 import com.itzel.fabulash.events.OnClickListener

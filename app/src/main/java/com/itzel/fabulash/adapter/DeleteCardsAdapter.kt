@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:app/src/main/java/com/itzel/fabulash/adapters/DeleteCardsAdapter.kt
-package com.itzel.fabulash.adapters
-========
 package com.itzel.fabulash.adapter
->>>>>>>> 838de2023057bb11bf853efeaf96532c070ed988:app/src/main/java/com/itzel/fabulash/adapter/DeleteCardsAdapter.kt
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,12 +8,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
-<<<<<<<< HEAD:app/src/main/java/com/itzel/fabulash/adapters/DeleteCardsAdapter.kt
-import com.itzel.fabulash.Cards
-import com.itzel.fabulash.events.OnClickListenerDeleteCards
-========
 import com.itzel.fabulash.models.Cards
->>>>>>>> 838de2023057bb11bf853efeaf96532c070ed988:app/src/main/java/com/itzel/fabulash/adapter/DeleteCardsAdapter.kt
 import com.itzel.fabulash.R
 import com.itzel.fabulash.databinding.TarjetasCardsBinding
 import com.itzel.fabulash.events.OnClickListenerDeleteCards
