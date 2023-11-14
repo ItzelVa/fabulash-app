@@ -229,8 +229,16 @@
         <item name="android:dateTextAppearance">@style/CalendarDay</item>
     </style>
 
-    <style name="RatingBar" parent="Widget.AppCompat.RatingBar">
-        <item name="android:progressDrawable">@drawable/custom_rating_bar</item>
+    <style name="RatingBar" parent="Theme.MaterialComponents.DayNight">
+        <item name="ratingBarStyle">@style/Controls.RatingBar</item>
+        <item name="colorControlActivated">@color/yellow_500</item>
+        <item name="colorControlNormal">@color/orange_900</item>
     </style>
 
+    <style name="Controls.RatingBar" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:isIndicator">false</item>
+    </style>
+
+    <color name="yellow_500">#CEB900</color>
+    <color name="orange_900">#F1A19B</color>
 </resources>

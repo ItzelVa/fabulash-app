@@ -77,7 +77,14 @@
     <string name="filtrar_por">Filtrar por:</string>
     <string name="buscar_por_nombre">Buscar por nombre</string>
     <string name="elija_personal">Elija Personal</string>
+
+    <string name="changePWD">Cambiar Contraseña</string>
+    <string name="newPWD">Nueva Contraseña</string>
+    <string name="mod_datos">Modificar Datos</string>
+    <string name="review">Escriba su reseña</string>
+
     <string name="elija_cita">Elija Cita</string>
+
     <string-array name="filters">
         <item>Natural</item>
         <item>Grande</item>
@@ -112,6 +119,8 @@
     <string name="modificarSelect">Selecciona la tarjeta a modificar:</string>
     <string name="modificar_tarjeta">Modificar Tarjeta</string>
 
+    <string name="edt_comment">Comentarios</string>
+
     <string name="title_activity_choose_payment">ChoosePayment</string>
     <string name="detalles">Detalles</string>
     <string name="servicio">Servicio</string>
@@ -126,5 +135,7 @@
     <string name="dejenos_review">Dejenos una reseña</string>
     <string name="comentarios">Comentarios...</string>
     <string name="mandar">Mandar</string>
+    <string name="reprogramar">Reprogramar</string>
+    <string name="guardar">Guardar</string>
 
 </resources>
