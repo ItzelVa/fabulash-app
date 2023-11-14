@@ -56,6 +56,9 @@
             android:name=".ChooseEmployee"
             android:exported="false"/>
         <activity
+            android:name=".modificar_datos"
+            android:exported="false"/>
+        <activity
             android:name=".ChooseLashes"
             android:exported="false" />
         <activity

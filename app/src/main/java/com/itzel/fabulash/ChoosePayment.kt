@@ -42,21 +42,27 @@ class ChoosePayment : AppCompatActivity() {
         super.onStart()
         binding.choosePaymentBackButton.setOnClickListener {
             val intent = Intent(this,ChooseAppointment::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
 
         // Botón confirmar
         binding.confirmButton.setOnClickListener {
             if(!(binding.cardBar.text.isBlank()) and !(binding.cardBar.text.contains("Escoja una tarjeta"))){
                 intent = Intent(this,ConfirmedAppointment::class.java)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
+                finish()
             }
         }
 
         // Botón cancelar
         binding.cancelButton.setOnClickListener {
             val intent = Intent(this,Home::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
     }
 }

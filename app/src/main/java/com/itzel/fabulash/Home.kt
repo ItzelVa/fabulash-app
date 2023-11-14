@@ -35,6 +35,7 @@ class Home : AppCompatActivity() {
         binding.homeFeedback.setOnClickListener {
             val intent = Intent(this, NewReview::class.java)
             startActivity(intent)
+            
         }
 
     }

@@ -18,7 +18,9 @@ class ConfirmedAppointment : AppCompatActivity() {
         super.onStart()
         binding.finishButton.setOnClickListener {
             val intent = Intent(this,Home::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
     }
 }

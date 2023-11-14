@@ -16,6 +16,7 @@ class Welcome : AppCompatActivity() {
         binding.welcomeButton.setOnClickListener {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

@@ -30,6 +30,12 @@ class Account : AppCompatActivity() {
         val deleteCard = findViewById<Button>(R.id.delete_button)
         val modCard = findViewById<Button>(R.id.edit_button)
         val myReviews = findViewById<Button>(R.id.b3)
+        val modData = findViewById<Button>(R.id.b2)
+
+        modData.setOnClickListener {
+            val view = Intent(this,modificar_datos::class.java)
+            startActivity(view)
+        }
 
         deleteCard.setOnClickListener {
             val view = Intent(this,DeleteCard::class.java)
@@ -59,7 +65,9 @@ class Account : AppCompatActivity() {
 
         backButton.setOnClickListener{
             val intent = Intent(this,Home::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
 
         addButton.setOnClickListener {

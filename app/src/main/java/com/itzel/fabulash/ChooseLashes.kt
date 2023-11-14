@@ -68,7 +68,9 @@ class ChooseLashes : AppCompatActivity(), OnClickListener {
         // Botón hacia atrás
         binding.chooseLashesBackButton.setOnClickListener{
             val intent = Intent(this,ChooseService::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
 
         // Barra buscadora, filtra al cambio de cada letra

@@ -137,5 +137,6 @@
     <string name="mandar">Mandar</string>
     <string name="reprogramar">Reprogramar</string>
     <string name="guardar">Guardar</string>
+    <string name="currentPWD">Contraseña actual</string>
 
 </resources>

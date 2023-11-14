@@ -37,7 +37,9 @@ class ModifyCard : AppCompatActivity(), OnClickListenerModifyCards {
         val modBackButton = findViewById<ImageButton>(R.id.modifyCardBackButton)
         modBackButton.setOnClickListener {
             val intent = Intent(this, Account::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
 
         val rec = findViewById<RecyclerView>(R.id.recyclerModifyTarjetas)
@@ -53,6 +55,7 @@ class ModifyCard : AppCompatActivity(), OnClickListenerModifyCards {
             val intent = Intent(this, ModifyCardData::class.java)
             intent.putExtra("Position", pos)
             startActivity(intent)
+
         }
 
     }

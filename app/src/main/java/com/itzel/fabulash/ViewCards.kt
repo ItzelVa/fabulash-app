@@ -34,25 +34,33 @@ class ViewCards : AppCompatActivity(), OnClickListenerCards {
         val addCard = findViewById<Button>(R.id.addTarjeta)
         addCard.setOnClickListener {
             val view = Intent(this,RegisterCard::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(view)
+            finish()
         }
 
         val deleteCard = findViewById<Button>(R.id.deleteTarjeta)
         deleteCard.setOnClickListener {
             val view = Intent(this,DeleteCard::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(view)
+            finish()
         }
 
         val modifyCard = findViewById<Button>(R.id.modifyTarjeta)
         modifyCard.setOnClickListener {
             val view = Intent(this,ModifyCard::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(view)
+            finish()
         }
 
         val backCard = findViewById<ImageButton>(R.id.tarjetasBackButton)
         backCard.setOnClickListener{
             val view = Intent(this,Account::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(view)
+            finish()
         }
     }
 
