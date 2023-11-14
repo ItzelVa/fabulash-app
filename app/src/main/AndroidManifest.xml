@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Fabulash"
         tools:targetApi="31">
         <activity
+            android:name=".Reprogramar"
+            android:exported="false" />
+        <activity
             android:name=".ModifyCardData"
             android:exported="false" />
         <activity

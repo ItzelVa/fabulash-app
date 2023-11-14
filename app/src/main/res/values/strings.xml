@@ -121,5 +121,7 @@
     <string name="cita_confirmada">¡Cita Confirmada!</string>
     <string name="terminar">Terminar</string>
     <string name="mis_citas">Mis Citas</string>
+    <string name="reprogramar">Reprogramar</string>
+    <string name="guardar">Guardar</string>
 
 </resources>
