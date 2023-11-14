@@ -14,18 +14,19 @@ import com.itzel.fabulash.databinding.CardMyAppointmentsBinding
 import com.itzel.fabulash.events.OnClickListenerMyAppointments
 import com.itzel.fabulash.models.DataMyAppointments
 
-class DataMyAppointmentsAdapter(private var appointments:List<DataMyAppointments>, private val listener: OnClickListenerMyAppointments):
+class DataMyAppointmentsAdapter(private var appointments:MutableList<DataMyAppointments>, private val listener: OnClickListenerMyAppointments):
     RecyclerView.Adapter<DataMyAppointmentsAdapter.ViewHolder>() {
 
     private lateinit var context : Context
     inner class ViewHolder(view: View):RecyclerView.ViewHolder(view){
         val binding = CardMyAppointmentsBinding.bind(view)
 
-        fun setListener(myAppointments: DataMyAppointments){
-            binding.root.setOnClickListener {
-                listener.onClick(myAppointments)
+        fun setListener(myAppointments: DataMyAppointments,view:View,position: Int){
+            binding.more.setOnClickListener {
+                listener.onClick(myAppointments,view,position)
             }
         }
+
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
@@ -36,7 +37,6 @@ class DataMyAppointmentsAdapter(private var appointments:List<DataMyAppointments
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val appointment = appointments[position]
         with(holder){
-            setListener(appointment)
             binding.statusText.text = appointment.status
             binding.fecha.text = appointment.fecha
             binding.hora.text = appointment.hora
@@ -60,8 +60,20 @@ class DataMyAppointmentsAdapter(private var appointments:List<DataMyAppointments
                 .centerCrop()
                 .circleCrop()
                 .into(binding.imgPersonal)
+
+            setListener(appointment,binding.more,position)
         }
     }
 
     override fun getItemCount(): Int = appointments.size
+
+
+    fun remove(position: Int){
+        var appointment = appointments[position]
+
+        // Actualiza el texto en el objeto
+        appointment.status = "Cancelada"
+
+        notifyItemChanged(position)
+    }
 }

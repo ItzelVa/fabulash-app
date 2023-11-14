@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChooseAppointment"
+    tools:context=".Reprogramar"
     android:background="@drawable/background_appointment">
 
     <ImageButton
@@ -24,12 +24,31 @@
         style="@style/FabulashText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/elija_cita"
+        android:text="@string/reprogramar"
         android:textColor="@color/night"
-        android:textSize="50sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/chooseAppointmentBackButton"/>
+
+    <ImageView
+        android:id="@+id/clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/chooseTitle"
+        app:layout_constraintStart_toStartOf="@id/chooseTitle"
+        android:src="@drawable/clock"
+        android:layout_marginTop="6dp"/>
+
+    <TextView
+        android:id="@+id/fechaHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/clock"
+        app:layout_constraintTop_toTopOf="@id/clock"
+        tools:text="17 de noviembre - 2:00 p.m."
+        android:layout_marginStart="16dp"
+        />
 
     <DatePicker
         android:id="@+id/calendar"
@@ -38,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@id/chooseTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:theme="@style/Calendar"
         />
 
@@ -175,7 +194,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/ButtonsStyle1"
-        android:text="@string/siguiente"
+        android:text="@string/guardar"
         android:backgroundTint="@color/day"
         android:textColor="@color/night"
         android:layout_marginBottom="8dp"/>
