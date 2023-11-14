@@ -1,6 +1,7 @@
 package com.itzel.fabulash.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuInflater
@@ -8,9 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.itzel.fabulash.EditReview
 import com.itzel.fabulash.R
+import com.itzel.fabulash.RegisterCard
 import com.itzel.fabulash.databinding.CardMyReviewsBinding
 import com.itzel.fabulash.events.OnClickListenerReviews
 import com.itzel.fabulash.models.Reviews
@@ -45,6 +49,8 @@ class MyReviewsAdapter(private val reviews: MutableList<Reviews>, private val li
             when (item.itemId) {
                 R.id.modificar -> {
                     // Handle menu item 1 click
+                    val intent = Intent(context, EditReview::class.java)
+                    context.startActivity(intent)
                     true
                 }
                 R.id.eliminar -> {
@@ -89,6 +95,7 @@ class MyReviewsAdapter(private val reviews: MutableList<Reviews>, private val li
                 .setCancelable(true)
                 .show()
         }
+
 
     }
     override fun getItemCount(): Int = reviews.size
