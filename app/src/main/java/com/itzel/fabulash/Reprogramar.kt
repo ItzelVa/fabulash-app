@@ -32,7 +32,9 @@ class Reprogramar : AppCompatActivity() {
 
         binding.chooseAppointmentBackButton.setOnClickListener {
             val intent = Intent(this,MyAppointments::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
 
         // Listener del botón siguiente
@@ -44,8 +46,10 @@ class Reprogramar : AppCompatActivity() {
                     editor.putString("chosenDate", dateComplete)
                     editor.putString("chosenHour", binding.hourBar.text.toString())
                     editor.apply()
-                    val intent = Intent(this,Home::class.java)
+                    val intent = Intent(this,MyAppointments::class.java)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent)
+                    finish()
                 }
             }
         }

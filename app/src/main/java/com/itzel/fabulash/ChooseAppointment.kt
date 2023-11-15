@@ -29,6 +29,7 @@ class ChooseAppointment : AppCompatActivity() {
 
         binding.chooseAppointmentBackButton.setOnClickListener {
             val intent = Intent(this,ChooseEmployee::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
 

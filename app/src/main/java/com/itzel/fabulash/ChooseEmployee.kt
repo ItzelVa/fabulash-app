@@ -49,6 +49,7 @@ class ChooseEmployee : AppCompatActivity(), OnClickListenerEmployee {
         super.onStart()
         binding.chooseEmployeeBackButton.setOnClickListener{
             val intent = Intent(this,ChooseLashes::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
     }

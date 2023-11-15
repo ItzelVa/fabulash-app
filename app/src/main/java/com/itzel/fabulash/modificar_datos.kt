@@ -7,6 +7,7 @@ import android.transition.Visibility
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 import com.itzel.fabulash.databinding.ActivityModificarDatosBinding
 import com.itzel.fabulash.databinding.ActivityRegisterBinding
@@ -18,6 +19,21 @@ class modificar_datos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityModificarDatosBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.dataBackButton.setOnClickListener {
+            val view = Intent(this,Account::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(view)
+            finish()
+        }
+
+        binding.registerDataButton.setOnClickListener {
+            val view = Intent(this,Account::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(view)
+            Toast.makeText(this, "Informacion Guardada", Toast.LENGTH_SHORT).show()
+            finish()
+        }
 
         binding.editPwd.setOnClickListener {
 

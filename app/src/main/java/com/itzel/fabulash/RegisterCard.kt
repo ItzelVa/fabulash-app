@@ -13,7 +13,9 @@ class RegisterCard : AppCompatActivity() {
         val registerBack = findViewById<ImageButton>(R.id.cardRegisterBackButton)
         registerBack.setOnClickListener{
             val view = Intent(this,Account::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(view)
+            finish()
         }
     }
 }

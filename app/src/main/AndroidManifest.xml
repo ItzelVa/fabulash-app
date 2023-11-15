@@ -16,6 +16,15 @@
         android:theme="@style/Theme.Fabulash"
         tools:targetApi="31">
         <activity
+            android:name=".NewReview"
+            android:exported="false" />
+        <activity
+            android:name=".EditReview"
+            android:exported="false" />
+        <activity
+            android:name=".MyReviews"
+            android:exported = "false"/>
+        <activity
             android:name=".Reprogramar"
             android:exported="false" />
         <activity
@@ -46,6 +55,9 @@
             android:exported="false" />
         <activity
             android:name=".ChooseEmployee"
+            android:exported="false"/>
+        <activity
+            android:name=".modificar_datos"
             android:exported="false"/>
         <activity
             android:name=".ChooseLashes"

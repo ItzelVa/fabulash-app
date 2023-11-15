@@ -38,13 +38,17 @@ class ModifyCardData : AppCompatActivity() {
         val backMod = findViewById<ImageButton>(R.id.cardModifyDataBackButton)
         backMod.setOnClickListener {
             val intent = Intent(this,ModifyCard::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
 
         button.setOnClickListener {
             Toast.makeText(this, "Tarjeta Modificada", Toast.LENGTH_SHORT).show()
             val intent = Intent(this,ModifyCard::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
     }
 

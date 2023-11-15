@@ -130,7 +130,14 @@
     <string name="cita_confirmada">¡Cita Confirmada!</string>
     <string name="terminar">Terminar</string>
     <string name="mis_citas">Mis Citas</string>
+    <string name="mis_reviews">Mis reseñas</string>
+    <string name="comment">Comentario</string>
+    <string name="dejenos_review">Dejenos una reseña</string>
+    <string name="comentarios">Comentarios...</string>
+    <string name="mandar">Mandar</string>
     <string name="reprogramar">Reprogramar</string>
     <string name="guardar">Guardar</string>
+    <string name="currentPWD">Contraseña actual</string>
+    <string name="edit_review">Modificar reseña</string>
 
 </resources>

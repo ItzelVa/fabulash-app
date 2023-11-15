@@ -42,6 +42,12 @@ class Home : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.homeFeedback.setOnClickListener {
+            val intent = Intent(this, NewReview::class.java)
+            startActivity(intent)
+            
+        }
+
     }
 
     override fun onResume() {

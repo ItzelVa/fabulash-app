@@ -201,13 +201,15 @@
             android:layout_marginStart="3dp">
 
             <Button
+                android:id="@+id/myReviews"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/mis_reseñas"
                 android:textColor="@color/white"
                 style="@style/ButtonsStyle3"
                 android:clickable="false"
-                android:backgroundTint="@color/night" />
+                android:backgroundTint="@color/night"
+                tools:ignore="InvalidId" />
 
         </FrameLayout>
 

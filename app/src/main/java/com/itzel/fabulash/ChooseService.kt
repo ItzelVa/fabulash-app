@@ -23,7 +23,9 @@ class ChooseService : AppCompatActivity() {
 
         binding.chooseServiceBackButton.setOnClickListener{
             val intent = Intent(this,Home::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+            finish()
         }
 
         binding.nextButton.setOnClickListener {
