@@ -83,4 +83,8 @@ class DeleteCardsAdapter(private val cards: MutableList<Cards>, private val list
 
 
     override fun getItemCount(): Int = cards.size
+
+    fun getCardId(position: Int): Int {
+        return cards[position].id!!
+    }
 }

@@ -6,6 +6,7 @@ import com.itzel.fabulash.models.SessionResponse
 import com.itzel.fabulash.models.UserData
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.PATCH
 import retrofit2.http.POST
@@ -36,4 +37,7 @@ interface ApiMethods {
         @Path("id") id_tarjeta: Int,
         @Body newCardInfo: Cards
     ): Call<Void>
+
+    @DELETE("api/tarjeta/{id}/")
+    fun deleteCard(@Path("id") id_tarjeta: Int): Call<Void>
 }

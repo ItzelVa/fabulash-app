@@ -141,5 +141,6 @@
     <string name="edit_review">Modificar reseña</string>
     <string name="apellidoTitular">Apellido del titular</string>
     <string name="fechaTarjeta2">aaaa-mm-dd</string>
+    <string name="error_en_la_api">Error en la api</string>
 
 </resources>
