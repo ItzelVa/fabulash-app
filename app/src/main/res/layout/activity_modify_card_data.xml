@@ -76,13 +76,40 @@
             style="@style/InputLayout"
             >
 
+
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nombreTitularM"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:imeOptions="actionNext"
-                android:nextFocusForward="@id/loginPwd"
+                android:nextFocusForward="@id/apellidoTitularM"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputCardLastNameM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/inputCardNameM"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="@string/apellidoTitular"
+            app:endIconMode="clear_text"
+            style="@style/InputLayout"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/apellidoTitularM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@id/numeroTarjetaM"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            app:layout_constraintTop_toBottomOf="@id/inputCardNameM"
+            app:layout_constraintTop_toBottomOf="@id/inputCardLastNameM"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:hint="@string/numeroTarjeta"
@@ -107,6 +134,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:imeOptions="actionDone"
+                android:nextFocusForward="@id/fechaTarjetaM"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -118,11 +146,12 @@
             app:layout_constraintTop_toBottomOf="@id/inputCardNumberM"
             app:layout_constraintStart_toStartOf="@id/inputCardNumberM"
             app:layout_constraintEnd_toStartOf="@+id/inputCardCvcM"
-            android:hint="@string/fechaTarjeta"
+            android:hint="@string/fechaTarjeta2"
             app:endIconMode="clear_text"
             style="@style/InputLayout"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:nextFocusForward="@id/cvcTarjetaM"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -131,7 +160,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:imeOptions="actionDone"
-                android:maxLength="4"
+                android:maxLength="10"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -155,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:imeOptions="actionDone"
-                android:maxLength="3"
+                android:maxLength="4"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

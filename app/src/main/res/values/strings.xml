@@ -139,5 +139,7 @@
     <string name="guardar">Guardar</string>
     <string name="currentPWD">Contraseña actual</string>
     <string name="edit_review">Modificar reseña</string>
+    <string name="apellidoTitular">Apellido del titular</string>
+    <string name="fechaTarjeta2">aaaa-mm-dd</string>
 
 </resources>

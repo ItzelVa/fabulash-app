@@ -48,11 +48,11 @@ class DeleteCardsAdapter(private val cards: MutableList<Cards>, private val list
         val card = cards[position]
         with(holder){
             setListener(card, position+1)
-            binding.cardType.text = card.getCardType(card.number)
-            binding.cardName.text = card.name.toString()
-            binding.cardDate.text = card.date.toString()
-            binding.cardNumber.text = card.number.toString()
-            binding.cardCvc.text = card.cvc.toString()
+            binding.cardType.text = card.getCardType(card.numero)
+            binding.cardName.text = "${card.nombre} ${card.apellido}"
+            binding.cardDate.text = card.fecha_vencimiento
+            binding.cardNumber.text = card.numero
+            binding.cardCvc.text = card.cvd.toString()
 
             if (selectedPosition == holder.adapterPosition) {
                 // Apply styles for the selected card

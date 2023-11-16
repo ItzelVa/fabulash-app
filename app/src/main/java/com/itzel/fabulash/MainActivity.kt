@@ -43,28 +43,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-        getUsers()
-    }
-
-    private fun getUsers(){
-        Api.request.getUsers().enqueue(object : Callback<MutableList<UserData>> {
-            override fun onResponse(
-                call: Call<MutableList<UserData>>,
-                response: Response<MutableList<UserData>>
-            ) {
-                if (response.isSuccessful){
-                    response.body()?.let {
-                        for (user in it){
-                            Log.i(TAG, "User name: ${user.nombre} ${user.apellido}")
-                        }
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<MutableList<UserData>>, t: Throwable) {
-                Toast.makeText(this@MainActivity, "Error en la api", Toast.LENGTH_LONG)
-            }
-        })
     }
 }

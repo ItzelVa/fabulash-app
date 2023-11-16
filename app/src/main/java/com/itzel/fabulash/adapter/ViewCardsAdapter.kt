@@ -31,11 +31,11 @@ class ViewCardsAdapter(private val cards: MutableList<Cards>, private val listen
         val card = cards[position]
         with(holder){
             setListener(card, position+1)
-            binding.cardType.text = card.getCardType(card.number)
-            binding.cardName.text = card.name.toString()
-            binding.cardDate.text = card.date.toString()
-            binding.cardNumber.text = card.number.toString()
-            binding.cardCvc.text = card.cvc.toString()
+            binding.cardType.text = card.getCardType(card.numero)
+            binding.cardName.text = "${card.nombre} ${card.apellido}"
+            binding.cardDate.text = card.nombre
+            binding.cardNumber.text = card.numero
+            binding.cardCvc.text = card.cvd.toString()
         }
     }
 
@@ -43,6 +43,10 @@ class ViewCardsAdapter(private val cards: MutableList<Cards>, private val listen
     fun remove(position: Int){
         cards.removeAt(position)
         notifyItemRemoved(position)
+    }
+
+    fun getCardId(position: Int): Int{
+        return cards[position].id
     }
 
 }

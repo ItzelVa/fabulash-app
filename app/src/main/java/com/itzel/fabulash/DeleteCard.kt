@@ -1,7 +1,9 @@
 package com.itzel.fabulash
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,6 +18,10 @@ import com.itzel.fabulash.databinding.ActivityDeleteCardBinding
 import com.itzel.fabulash.databinding.TarjetasCardsBinding
 import com.itzel.fabulash.events.OnClickListenerDeleteCards
 import com.itzel.fabulash.models.Cards
+import com.itzel.fabulash.network.Api
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DeleteCard : AppCompatActivity(), OnClickListenerDeleteCards {
 
@@ -23,6 +29,7 @@ class DeleteCard : AppCompatActivity(), OnClickListenerDeleteCards {
     private lateinit var binding: ActivityDeleteCardBinding
     private lateinit var cardAdapter: DeleteCardsAdapter
     private lateinit var tarjeta: TarjetasCardsBinding
+    private lateinit var sharedPreferences : SharedPreferences
     lateinit var cardNumber: String
     var pos: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +39,7 @@ class DeleteCard : AppCompatActivity(), OnClickListenerDeleteCards {
 
         setContentView(binding.root)
 
+        sharedPreferences = getSharedPreferences("session", Context.MODE_PRIVATE)
 
         cardAdapter = DeleteCardsAdapter(getCards(),this)
         cardAdapter.setOnItemClickListener(this)
@@ -68,23 +76,28 @@ class DeleteCard : AppCompatActivity(), OnClickListenerDeleteCards {
     }
 
     private fun getCards(): MutableList<Cards>{
-        val cards = mutableListOf<Cards>()
-        val card1 = Cards("Itzel Ochoa","400 100 233 1923","11/25","341")
-        val card2 = Cards("Itzel Ochoa","510 100 233 1923","11/25","300")
-        val card3 = Cards("Itzel Ochoa","654 100 233 1923","11/25","300")
-        val card4 = Cards("Itzel Ochoa","644 100 233 1923","11/25","300")
+        val idCliente = sharedPreferences.getInt("id_user", 0)
+        var cards = mutableListOf<Cards>()
 
-        cards.add(card1)
-        cards.add(card2)
-        cards.add(card3)
-        cards.add(card4)
+        Api.request.getCardsInfo(idCliente).enqueue(object : Callback<MutableList<Cards>> {
+            override fun onResponse(
+                call: Call<MutableList<Cards>>,
+                response: Response<MutableList<Cards>>
+            ) {
+                cards = response.body()!!
+            }
+
+            override fun onFailure(call: Call<MutableList<Cards>>, t: Throwable) {
+                Toast.makeText(this@DeleteCard, "Fallo en la api", Toast.LENGTH_SHORT).show()
+            }
+        })
 
         return cards
     }
 
     @SuppressLint("WrongViewCast", "ResourceAsColor")
     override fun onClick(card: Cards, position: Int) {
-        cardNumber = card.number
+        cardNumber = card.numero
         pos = position
 //        Toast.makeText(this, cardNumber, Toast.LENGTH_SHORT).show()
         val deleteButton = findViewById<Button>(R.id.deleteCardButton)
