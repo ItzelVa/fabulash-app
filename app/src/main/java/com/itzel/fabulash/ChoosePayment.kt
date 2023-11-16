@@ -8,8 +8,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.itzel.fabulash.adapter.ViewCardsAdapter
 import com.itzel.fabulash.databinding.ActivityChoosePaymentBinding
 import com.itzel.fabulash.models.AppointmentPost
+import com.itzel.fabulash.models.Cards
 import com.itzel.fabulash.network.Api
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,7 +21,7 @@ import retrofit2.Response
 class ChoosePayment : AppCompatActivity() {
 
     private lateinit var binding: ActivityChoosePaymentBinding
-    private val cards = arrayOf("5467 7657 1432 9087", "8760 5305 1732 3047","3948 6547 0274 2684")
+    private val cards = arrayOf("")
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var sharedPreferencesSession: SharedPreferences
     private lateinit var chosenService: String
@@ -37,6 +40,7 @@ class ChoosePayment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChoosePaymentBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         sharedPreferencesSession = getSharedPreferences("session", Context.MODE_PRIVATE)
         sharedPreferences = getSharedPreferences("service", Context.MODE_PRIVATE)
@@ -51,6 +55,9 @@ class ChoosePayment : AppCompatActivity() {
         val arrayAdapterCards = ArrayAdapter(this,R.layout.dropdown_filter_lashes,cards)
 
         binding.cardBar.setAdapter(arrayAdapterCards)
+
+        getCards()
+
         binding.serviceChosen.text = chosenService
         binding.lashesChosen.text = chosenLashes
         binding.employeeChosen.text = chosenEmployee
@@ -58,7 +65,7 @@ class ChoosePayment : AppCompatActivity() {
         binding.hourChosen.text = chosenHour
         binding.totalPayment.text = "$${getServicePrice()}"
 
-        setContentView(binding.root)
+
     }
 
     override fun onStart() {
@@ -121,5 +128,30 @@ class ChoosePayment : AppCompatActivity() {
         idClient = sharedPreferencesSession.getInt("id_user", 0)
 
         return lashesPrice + servicePrice
+    }
+
+    private fun getCards(){
+        Api.request.getCardsInfo(idClient).enqueue(object : Callback<MutableList<Cards>> {
+            override fun onResponse(
+                call: Call<MutableList<Cards>>,
+                response: Response<MutableList<Cards>>
+            ) {
+                if (response.isSuccessful){
+                    val data = mutableListOf<String>()
+
+                    for (card in response.body()!!){
+                        data.add(card.numero)
+                    }
+
+                    val arrayAdapterCards = ArrayAdapter(this@ChoosePayment,R.layout.dropdown_filter_lashes,data)
+                    binding.cardBar.setAdapter(arrayAdapterCards)
+                }
+            }
+
+            override fun onFailure(call: Call<MutableList<Cards>>, t: Throwable) {
+                Toast.makeText(this@ChoosePayment, "Fallo en la api", Toast.LENGTH_SHORT).show()
+            }
+        })
+
     }
 }
