@@ -77,7 +77,7 @@ class ModifyCardsAdapter (private val cards: MutableList<Cards>, private val lis
     override fun getItemCount(): Int = cards.size
 
     fun getCardId(position: Int): Int{
-        return cards[position].id
+        return cards[position].id!!
     }
 
 }

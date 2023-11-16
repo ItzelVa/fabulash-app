@@ -46,7 +46,7 @@ class ViewCardsAdapter(private val cards: MutableList<Cards>, private val listen
     }
 
     fun getCardId(position: Int): Int{
-        return cards[position].id
+        return cards[position].id!!
     }
 
 }

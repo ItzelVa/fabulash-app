@@ -5,8 +5,8 @@ data class Cards(
     val clvusu: Int = 0,
     val cvd: Int = 0,
     val fecha_vencimiento: String = "",
-    val hab: Boolean = false,
-    val id: Int = 0,
+    val hab: Boolean? = true,
+    val id: Int? = null,
     val nombre: String = "",
     val numero: String = ""
 ){

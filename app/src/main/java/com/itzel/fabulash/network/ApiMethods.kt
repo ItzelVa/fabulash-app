@@ -26,6 +26,11 @@ interface ApiMethods {
         @Query("id_tarjeta") idCard: Int,
         ): Call<Cards>
 
+    @POST("api/tarjeta/")
+    fun createCard(
+        @Body newCard: Cards
+    ): Call<Void>
+
     @PUT("api/tarjeta/{id}/")
     fun updateCardInfo(
         @Path("id") id_tarjeta: Int,
