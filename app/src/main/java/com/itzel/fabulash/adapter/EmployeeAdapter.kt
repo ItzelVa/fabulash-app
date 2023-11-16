@@ -34,8 +34,8 @@ class EmployeeAdapter(private var employees: List<Employee>, private val listene
         val employee = employees[position]
         with(holder){
             setListener(employee)
-            binding.nameEmployee.text = employee.nombre
-            binding.expEmployee.text = employee.experiencia
+            binding.nameEmployee.text = "${employee.nombre} ${employee.apellido}"
+            binding.expEmployee.text = employee.descripcion
             if(employee.estrellas==0){
                 binding.starsEmployee.text = ""
             }
@@ -55,7 +55,7 @@ class EmployeeAdapter(private var employees: List<Employee>, private val listene
                 binding.starsEmployee.text = "⭐⭐⭐⭐⭐"
             }
             Glide.with(context)
-                .load(employee.img)
+                .load(employee.imagen)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .circleCrop()

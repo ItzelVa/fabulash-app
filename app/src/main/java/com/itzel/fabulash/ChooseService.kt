@@ -2,6 +2,7 @@ package com.itzel.fabulash
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,12 +11,16 @@ import com.itzel.fabulash.databinding.ActivityChooseServiceBinding
 class ChooseService : AppCompatActivity() {
 
     private lateinit var binding: ActivityChooseServiceBinding
+    private lateinit var sharedPreferences: SharedPreferences
     private var click : Int = 0
     private var chosen : String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChooseServiceBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedPreferences = getSharedPreferences("service", Context.MODE_PRIVATE)
     }
 
     override fun onStart() {
@@ -32,11 +37,6 @@ class ChooseService : AppCompatActivity() {
 
             Log.i("NEXT BUTTON CLICK",click.toString())
             Log.i("NEXT BUTTON SERVICE",chosen)
-
-            val sharedPreferences = getSharedPreferences("MySharedPrefs", Context.MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
-            editor.putString("chosenService", chosen)
-            editor.apply()
 
             if(click == 1){
                 val intent = Intent(this,ChooseLashes::class.java)
@@ -58,6 +58,10 @@ class ChooseService : AppCompatActivity() {
             binding.aplicacionButton.setBackgroundColor(getResources().getColor(R.color.statusGreen))
             click = 1
             chosen = "Aplicación"
+            with(sharedPreferences.edit()){
+                putInt("id_service", click)
+                apply()
+            }
         }
 
         binding.rizadoButton.setOnClickListener {
@@ -66,6 +70,10 @@ class ChooseService : AppCompatActivity() {
             binding.aplicacionButton.setBackgroundColor(getResources().getColor(R.color.yellow))
             click = 2
             chosen = "Rizado"
+            with(sharedPreferences.edit()){
+                putInt("id_service", click)
+                apply()
+            }
         }
 
         binding.retiradoButton.setOnClickListener {
@@ -74,6 +82,10 @@ class ChooseService : AppCompatActivity() {
             binding.aplicacionButton.setBackgroundColor(getResources().getColor(R.color.yellow))
             click = 3
             chosen = "Retirado"
+            with(sharedPreferences.edit()){
+                putInt("id_service", click)
+                apply()
+            }
         }
     }
 }

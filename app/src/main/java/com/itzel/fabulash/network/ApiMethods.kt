@@ -1,6 +1,7 @@
 package com.itzel.fabulash.network
 
 import com.itzel.fabulash.models.Cards
+import com.itzel.fabulash.models.Employee
 import com.itzel.fabulash.models.LoginData
 import com.itzel.fabulash.models.SessionResponse
 import com.itzel.fabulash.models.UserData
@@ -40,4 +41,7 @@ interface ApiMethods {
 
     @DELETE("api/tarjeta/{id}/")
     fun deleteCard(@Path("id") id_tarjeta: Int): Call<Void>
+
+    @GET("api/empleado/")
+    fun getEmployees(@Query("id_servicio") idService: Int): Call<MutableList<Employee>>
 }
