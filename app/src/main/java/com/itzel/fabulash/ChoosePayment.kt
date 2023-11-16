@@ -5,11 +5,8 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.itzel.fabulash.adapter.ViewCardsAdapter
 import com.itzel.fabulash.databinding.ActivityChoosePaymentBinding
 import com.itzel.fabulash.models.AppointmentPost
 import com.itzel.fabulash.models.Cards
@@ -80,7 +77,7 @@ class ChoosePayment : AppCompatActivity() {
         // Botón confirmar
         binding.confirmButton.setOnClickListener {
             if(!(binding.cardBar.text.isBlank()) and !(binding.cardBar.text.contains("Escoja una tarjeta"))) {
-                Api.request.setAppoiment(
+                Api.request.setAppointment(
                     AppointmentPost(
                         clvfp = 1,
                         clvpes = idLashes,

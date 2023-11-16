@@ -1,12 +1,13 @@
 package com.itzel.fabulash.network
 
 import com.itzel.fabulash.models.AppointmentPost
+import com.itzel.fabulash.models.AppointmentUpdate
 import com.itzel.fabulash.models.Cards
 import com.itzel.fabulash.models.Employee
 import com.itzel.fabulash.models.LashesResponse
 import com.itzel.fabulash.models.LoginData
 import com.itzel.fabulash.models.SessionResponse
-import com.itzel.fabulash.models.UserData
+import com.itzel.fabulash.models.ViewAppointment
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -51,5 +52,16 @@ interface ApiMethods {
     fun getLashes(): Call<LashesResponse>
 
     @POST("api/cita/")
-    fun setAppoiment(@Body newAppointment: AppointmentPost): Call<Void>
+    fun setAppointment(@Body newAppointment: AppointmentPost): Call<Void>
+
+    @GET("api/cita/")
+    fun getAppointments(
+        @Query("id_cliente") idClient: Int
+    ): Call<ViewAppointment>
+
+    @PATCH("api/cita/{id}/")
+    fun updateApointMent(
+        @Path("id") idAppointment: Int,
+        @Body updatedAppointment: AppointmentUpdate): Call<Void>
+
 }

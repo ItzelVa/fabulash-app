@@ -4,7 +4,7 @@ data class AppointmentPost(
     val clvfp: Int? = 0,
     val clvpes: Int? = null,
     val clvser: Int? = 0,
-    val clvstat: Int? = 1,
+    var clvstat: Int? = 1,
     val clvusu: Int? = 0,
     val fecha: String? = "",
     val hab: Boolean? = true,

@@ -2,16 +2,24 @@ package com.itzel.fabulash
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.DatePicker
+import android.widget.Toast
 import com.itzel.fabulash.databinding.ActivityReprogramarBinding
+import com.itzel.fabulash.models.AppointmentUpdate
+import com.itzel.fabulash.network.Api
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Reprogramar : AppCompatActivity() {
 
     private lateinit var binding: ActivityReprogramarBinding
+    private lateinit var sharedPreferences: SharedPreferences
     // Bandera para avanzar dependiendo si escogió un día valido (No ocupado)
     private var ban = false
     private var dateComplete: String = ""
@@ -19,7 +27,7 @@ class Reprogramar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityReprogramarBinding.inflate(layoutInflater)
 
-        val sharedPreferences = getSharedPreferences("MySharedPrefs", Context.MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences("MySharedPrefs", Context.MODE_PRIVATE)
         val date = sharedPreferences.getString("currentDate", "")
 
         binding.fechaHora.text = date
@@ -46,10 +54,27 @@ class Reprogramar : AppCompatActivity() {
                     editor.putString("chosenDate", dateComplete)
                     editor.putString("chosenHour", binding.hourBar.text.toString())
                     editor.apply()
-                    val intent = Intent(this,MyAppointments::class.java)
-                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    startActivity(intent)
-                    finish()
+                    val appointmentID = sharedPreferences.getInt("appointmentId", 0)
+                    val updatedAppointment = AppointmentUpdate(
+                        fecha = dateComplete,
+                        hora = binding.hourBar.text.toString()
+                    )
+
+                    Api.request.updateApointMent(appointmentID, updatedAppointment).enqueue(object : Callback<Void>{
+                        override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                            if (response.isSuccessful){
+                                val intent = Intent(this@Reprogramar,MyAppointments::class.java)
+                                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                                startActivity(intent)
+                                finish()
+                            }
+                        }
+
+                        override fun onFailure(call: Call<Void>, t: Throwable) {
+                            Toast.makeText(this@Reprogramar, "Error en la api", Toast.LENGTH_SHORT).show()
+                        }
+
+                    })
                 }
             }
         }
@@ -100,7 +125,7 @@ class Reprogramar : AppCompatActivity() {
                 }
 
                 // variable que guarda la fecha DIA / MES / AÑO
-                dateComplete = selectedDay.toString() +"-"+ month.toString() +"-"+ year.toString()
+                dateComplete = year.toString() +"-"+ month.toString() +"-"+ selectedDay.toString()
                 Log.i("DATE",dateComplete)
             }
         })

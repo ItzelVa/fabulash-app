@@ -37,25 +37,25 @@ class DataMyAppointmentsAdapter(private var appointments:MutableList<DataMyAppoi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val appointment = appointments[position]
         with(holder){
-            binding.statusText.text = appointment.status
+            binding.statusText.text = appointment.estatus
             binding.fecha.text = appointment.fecha
             binding.hora.text = appointment.hora
             binding.nombrePersonal.text = appointment.empleado
             binding.servicio.text = appointment.servicio
-            if(appointment.status.contains("Completada")){
+            if(appointment.estatus.contains("Completada")){
                 binding.statusAppointment.setCardBackgroundColor(ContextCompat.getColor(context,
                     R.color.yellow
                 ))
                 binding.more.isGone = true
             }
-            if(appointment.status.contains("Cancelada")){
+            if(appointment.estatus.contains("Cancelada")){
                 binding.statusAppointment.setCardBackgroundColor(ContextCompat.getColor(context,
                     R.color.pink
                 ))
                 binding.more.isGone = true
             }
             Glide.with(context)
-                .load(appointment.imgEmpleado)
+                .load(appointment.foto)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .circleCrop()
@@ -72,7 +72,7 @@ class DataMyAppointmentsAdapter(private var appointments:MutableList<DataMyAppoi
         var appointment = appointments[position]
 
         // Actualiza el texto en el objeto
-        appointment.status = "Cancelada"
+        appointment.estatus = "Cancelada"
 
         notifyItemChanged(position)
     }
