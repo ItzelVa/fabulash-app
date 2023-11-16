@@ -41,10 +41,10 @@ class LashesAdapter(private var lashes: List<Lashes>, private val listener: OnCl
         with(holder){
             setListener(lash)
             binding.nameLash.text = lash.nombre
-            binding.styleLash.text = lash.estilo
+            binding.styleLash.text = lash.tipo
             binding.sizeLash.text = lash.tamano
             Glide.with(context)
-                .load(lash.img)
+                .load(lash.foto)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .into(binding.imgLash)

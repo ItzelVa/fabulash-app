@@ -93,8 +93,7 @@ class Account : AppCompatActivity() {
                 .setNeutralButton(R.string.no, {dialog, i -> })
                 .setPositiveButton(R.string.si) { dialog, i ->
                     with(sharedPreferences.edit()) {
-                        remove("id_user")
-                        remove("name")
+                        clear()
                         apply()
                     }
                     closeActivity()

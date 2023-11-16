@@ -2,6 +2,7 @@ package com.itzel.fabulash
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -16,12 +17,14 @@ class ChooseAppointment : AppCompatActivity() {
     // Bandera para avanzar dependiendo si escogió un día valido (No ocupado)
     private var ban = false
     private var dateComplete: String = ""
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChooseAppointmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        sharedPreferences = getSharedPreferences("service", Context.MODE_PRIVATE)
     }
 
     override fun onStart() {
@@ -37,7 +40,6 @@ class ChooseAppointment : AppCompatActivity() {
         binding.nextButton.setOnClickListener {
             if(ban){
                 if(!binding.hourBar.text.isEmpty() and !(binding.hourBar.text.contains("Hora"))){
-                    val sharedPreferences = getSharedPreferences("MySharedPrefs", Context.MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
                     editor.putString("chosenDate", dateComplete)
                     editor.putString("chosenHour", binding.hourBar.text.toString())
@@ -94,7 +96,7 @@ class ChooseAppointment : AppCompatActivity() {
                 }
 
                 // variable que guarda la fecha DIA / MES / AÑO
-                dateComplete = selectedDay.toString() +"-"+ month.toString() +"-"+ year.toString()
+                dateComplete = year.toString() +"-"+ month.toString() +"-"+ selectedDay.toString()
                 Log.i("DATE",dateComplete)
             }
         })

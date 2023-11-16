@@ -1,7 +1,9 @@
 package com.itzel.fabulash.network
 
+import com.itzel.fabulash.models.AppointmentPost
 import com.itzel.fabulash.models.Cards
 import com.itzel.fabulash.models.Employee
+import com.itzel.fabulash.models.LashesResponse
 import com.itzel.fabulash.models.LoginData
 import com.itzel.fabulash.models.SessionResponse
 import com.itzel.fabulash.models.UserData
@@ -44,4 +46,10 @@ interface ApiMethods {
 
     @GET("api/empleado/")
     fun getEmployees(@Query("id_servicio") idService: Int): Call<MutableList<Employee>>
+
+    @GET("api/pestanas/")
+    fun getLashes(): Call<LashesResponse>
+
+    @POST("api/cita/")
+    fun setAppoiment(@Body newAppointment: AppointmentPost): Call<Void>
 }

@@ -60,6 +60,8 @@ class ChooseService : AppCompatActivity() {
             chosen = "Aplicación"
             with(sharedPreferences.edit()){
                 putInt("id_service", click)
+                putString("name_service", chosen)
+                putFloat("price_service", 250f)
                 apply()
             }
         }
@@ -72,6 +74,8 @@ class ChooseService : AppCompatActivity() {
             chosen = "Rizado"
             with(sharedPreferences.edit()){
                 putInt("id_service", click)
+                putString("name_service", chosen)
+                putFloat("price_service", 150f)
                 apply()
             }
         }
@@ -84,6 +88,8 @@ class ChooseService : AppCompatActivity() {
             chosen = "Retirado"
             with(sharedPreferences.edit()){
                 putInt("id_service", click)
+                putString("name_service", chosen)
+                putFloat("price_service", 200f)
                 apply()
             }
         }

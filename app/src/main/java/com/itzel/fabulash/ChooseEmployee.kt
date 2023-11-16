@@ -49,6 +49,7 @@ class ChooseEmployee : AppCompatActivity(), OnClickListenerEmployee {
 
         val editor = sharedPreferences.edit()
         editor.putInt("id_employee", employee.id)
+        editor.putString("name_employee", "${employee.nombre} ${employee.apellido}")
         editor.apply()
 
         val intent=Intent(this, ChooseAppointment::class.java)
