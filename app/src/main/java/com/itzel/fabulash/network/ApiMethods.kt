@@ -1,11 +1,13 @@
 package com.itzel.fabulash.network
 
+import com.itzel.fabulash.NewReview
 import com.itzel.fabulash.models.AppointmentPost
 import com.itzel.fabulash.models.AppointmentUpdate
 import com.itzel.fabulash.models.Cards
 import com.itzel.fabulash.models.Employee
 import com.itzel.fabulash.models.LashesResponse
 import com.itzel.fabulash.models.LoginData
+import com.itzel.fabulash.models.Resena
 import com.itzel.fabulash.models.SessionData
 import com.itzel.fabulash.models.SessionResponse
 import com.itzel.fabulash.models.ViewAppointment
@@ -73,4 +75,9 @@ interface ApiMethods {
         @Path("id") idAppointment: Int,
         @Body updatedAppointment: AppointmentUpdate): Call<Void>
 
+
+    @POST("api/resenas/")
+    fun postReview(
+        @Body newReview: Resena
+    ): Call<Void>
 }

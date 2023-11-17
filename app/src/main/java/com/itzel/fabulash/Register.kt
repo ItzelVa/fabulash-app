@@ -54,7 +54,7 @@ class Register : AppCompatActivity() {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     if (response.isSuccessful){
                         Toast.makeText(this@Register, "Cuenta creada", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this@Register, Welcome::class.java)
+                        val intent = Intent(this@Register, MainActivity::class.java)
                         finishAffinity()
                         startActivity(intent)
                     } else {
