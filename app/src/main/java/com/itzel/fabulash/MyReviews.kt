@@ -1,7 +1,9 @@
 package com.itzel.fabulash
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,11 +18,17 @@ import com.itzel.fabulash.databinding.ActivityMyReviewsBinding
 import com.itzel.fabulash.databinding.CardMyReviewsBinding
 import com.itzel.fabulash.events.OnClickListenerReviews
 import com.itzel.fabulash.models.Reviews
+import com.itzel.fabulash.network.Api
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MyReviews : AppCompatActivity(), OnClickListenerReviews{
     private lateinit var binding: ActivityMyReviewsBinding
     private lateinit var linearLayoutManager: RecyclerView.LayoutManager
     private lateinit var reviewAdapter: MyReviewsAdapter
+    private lateinit var recycler : RecyclerView
+    private lateinit var sharedPreferences: SharedPreferences
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,9 +36,9 @@ class MyReviews : AppCompatActivity(), OnClickListenerReviews{
         binding = ActivityMyReviewsBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_my_reviews)
 
+        sharedPreferences = getSharedPreferences("session", Context.MODE_PRIVATE)
 
-        reviewAdapter = MyReviewsAdapter(getReviews(),this)
-        linearLayoutManager = LinearLayoutManager(this)
+        recycler = findViewById<RecyclerView>(R.id.recyclerReviews)
 
         val reviewsBack = findViewById<ImageButton>(R.id.myReviewsBackButton)
         reviewsBack.setOnClickListener {
@@ -38,33 +46,47 @@ class MyReviews : AppCompatActivity(), OnClickListenerReviews{
             startActivity(intent)
         }
 
-        val recycler = findViewById<RecyclerView>(R.id.recyclerReviews)
-        recycler.apply {
-            layoutManager = linearLayoutManager
-            adapter = reviewAdapter
-        }
-
+        getReviews()
     }
 
 
-    private fun getReviews(): MutableList<Reviews> {
-        val reviews = mutableListOf<Reviews>()
-        val review1 = Reviews(5, 200, "17 de noviembre", "3:00 p.m.", "Servicio", "Aplicacion de extensiones de pestaña", "Me encantaron!")
-        val review2 = Reviews(3, 200, "1 de noviembre", "4:00 p.m.", "Servicio", "Retirado de extensiones de pestaña", ":/")
-        val review3 = Reviews(4, 200, "10 de octubre", "12:00 p.m.", "Servicio", "Rizado de pestañas", "Quedaron super bien!")
-        val review4 = Reviews(4, 200, "13 de septiembre", "6:00 p.m.", "Empleado", "Carmen Perez Diaz", "Me conto mucho chisme. :)")
-        val review5 = Reviews(5, 200, "22 de agosto", "4:00 p.m.", "Empleado", "Fulano Fulanito", "Tiene un gran humor.")
+    private fun getReviews() {
+        val idUser = sharedPreferences.getInt("id_user", 0)
+        var reviews = mutableListOf<Reviews>()
 
-        reviews.add(review1)
-        reviews.add(review2)
-        reviews.add(review3)
-        reviews.add(review4)
-        reviews.add(review5)
+        updateRecyclerView(reviews)
 
-        return reviews
+        Api.request.getReviews(idUser).enqueue(object : Callback<MutableList<Reviews>>{
+            override fun onResponse(
+                call: Call<MutableList<Reviews>>,
+                response: Response<MutableList<Reviews>>
+            ) {
+                if (response.isSuccessful){
+                    reviews = response.body()!!
+                    updateRecyclerView(reviews)
+                } else {
+                    Toast.makeText(this@MyReviews, "Error ${response.code()}", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<MutableList<Reviews>>, t: Throwable) {
+                Toast.makeText(this@MyReviews, "Error api", Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 
     override fun onClick(review: Reviews, position: Int) {
         Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun updateRecyclerView(reviews: MutableList<Reviews>){
+        reviewAdapter = MyReviewsAdapter(reviews,this)
+        linearLayoutManager = LinearLayoutManager(this)
+
+        recycler.apply {
+            layoutManager = linearLayoutManager
+            adapter = reviewAdapter
+        }
     }
 }

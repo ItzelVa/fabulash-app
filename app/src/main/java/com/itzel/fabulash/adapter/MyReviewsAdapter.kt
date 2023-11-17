@@ -76,11 +76,11 @@ class MyReviewsAdapter(private val reviews: MutableList<Reviews>, private val li
         val review = reviews[position]
         with(holder){
             setListener(review, position+1)
-            binding.fecha.text = review.date
-            binding.hora.text = review.time
-            binding.nombreCategoria.text = review.category
-            binding.subject.text = review.subject
-            binding.ratingBar.rating = review.stars.toFloat()
+            binding.fecha.text = review.fecha
+            binding.hora.text = ""
+            binding.nombreCategoria.text = review.categoria
+            binding.subject.text = review.destino
+            binding.ratingBar.rating = review.estrellas?.toFloat()!!
         }
 
         holder.binding.more.setOnClickListener {
@@ -91,7 +91,7 @@ class MyReviewsAdapter(private val reviews: MutableList<Reviews>, private val li
         holder.binding.cv1.setOnClickListener {
             MaterialAlertDialogBuilder(context,R.style.AlertDialogTheme)
                 .setTitle(R.string.comment)
-                .setMessage(review.comment)
+                .setMessage(review.comentario)
                 .setCancelable(true)
                 .show()
         }

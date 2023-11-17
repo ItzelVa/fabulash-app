@@ -8,6 +8,7 @@ import com.itzel.fabulash.models.Employee
 import com.itzel.fabulash.models.LashesResponse
 import com.itzel.fabulash.models.LoginData
 import com.itzel.fabulash.models.Resena
+import com.itzel.fabulash.models.Reviews
 import com.itzel.fabulash.models.SessionData
 import com.itzel.fabulash.models.SessionResponse
 import com.itzel.fabulash.models.ViewAppointment
@@ -59,6 +60,9 @@ interface ApiMethods {
     @GET("api/empleado/")
     fun getEmployees(@Query("id_servicio") idService: Int): Call<MutableList<Employee>>
 
+    @GET("api/empleado/")
+    fun getEmployees(): Call<MutableList<Employee>>
+
     @GET("api/pestanas/")
     fun getLashes(): Call<LashesResponse>
 
@@ -75,9 +79,18 @@ interface ApiMethods {
         @Path("id") idAppointment: Int,
         @Body updatedAppointment: AppointmentUpdate): Call<Void>
 
+    @GET("api/resenas/")
+    fun getReviews(
+        @Query("id_user") idUser: Int
+    ): Call<MutableList<Reviews>>
 
     @POST("api/resenas/")
     fun postReview(
         @Body newReview: Resena
+    ): Call<Void>
+
+    @DELETE("api/resenas/{id}")
+    fun deleteReview(
+        @Path("id") idReview: Int
     ): Call<Void>
 }

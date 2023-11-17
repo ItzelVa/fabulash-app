@@ -1,11 +1,11 @@
 package com.itzel.fabulash.models
 
 data class Reviews(
-    val stars: Int,
-    var user: Int,
-    var date: String,
-    var time: String,
-    var category: String,
-    var subject: String,
-    var comment: String
+    val categoria: String? = null,
+    val clvuser: Int? = null,
+    val comentario: String? = null,
+    val destino: String? = null,
+    val estrellas: Int? = null,
+    val fecha: String? = null,
+    val id: Int? = null
 )
