@@ -4,8 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.itzel.fabulash.databinding.ActivityRegisterBinding
+import com.itzel.fabulash.models.SessionData
+import com.itzel.fabulash.network.Api
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Register : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -37,15 +43,31 @@ class Register : AppCompatActivity() {
 
     private fun sendDataToServer() {
         if(validateForm()){
-            val dataStr = "Nombre:${binding.registerName.text.toString()}," +
-                        "Apellido:${binding.registerLastname.text.toString()}," +
-                        "Email:${binding.registerEmail.text.toString()}," +
-                        "Telefono:${binding.registerPhone.text.toString()}," +
-                        "Contrasena:${binding.registerPwd1.text.toString()},"
+            val userData = SessionData(
+                nombre = binding.registerName.text.toString(),
+                apellido = binding.registerLastname.text.toString(),
+                correo_electronico = binding.registerEmail.text.toString(),
+                telefono = binding.registerPhone.text.toString(),
+                contrasena = binding.registerPwd1.text.toString()
+            )
+            Api.request.registerUser(userData).enqueue(object : Callback<Void>{
+                override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                    if (response.isSuccessful){
+                        Toast.makeText(this@Register, "Cuenta creada", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this@Register, Welcome::class.java)
+                        finishAffinity()
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this@Register, "Error ${response.code()}", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
-            Log.i("DATA SENT",dataStr)
-            val intent = Intent(this, Welcome::class.java)
-            startActivity(intent)
+                override fun onFailure(call: Call<Void>, t: Throwable) {
+                    Toast.makeText(this@Register, "Error en la api", Toast.LENGTH_SHORT).show()
+                }
+
+            })
+
         }
     }
 

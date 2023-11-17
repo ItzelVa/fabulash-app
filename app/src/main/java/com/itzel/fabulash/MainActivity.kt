@@ -9,7 +9,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.itzel.fabulash.databinding.ActivityMainBinding
-import com.itzel.fabulash.models.UserData
 import com.itzel.fabulash.network.Api
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,7 +18,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var sharedPreferences : SharedPreferences
-    private val TAG: String = "OWN_RESPONSE"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -12,6 +12,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.itzel.fabulash.databinding.AccountBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.itzel.fabulash.models.SessionData
+import com.itzel.fabulash.network.Api
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Account : AppCompatActivity() {
     private lateinit var binding: AccountBinding
@@ -107,7 +112,33 @@ class Account : AppCompatActivity() {
                 .setTitle(R.string.delete_question)
                 .setMessage(R.string.delete_details)
                 .setNeutralButton(R.string.no, {dialog, i -> })
-                .setPositiveButton(R.string.si, {dialog, i -> })
+                .setPositiveButton(R.string.si, {dialog, i ->
+                    val idUser = sharedPreferences.getInt("id_user", 0)
+
+                    val updatedSessionData = SessionData(
+                        hab = false
+                    )
+
+                    Api.request.updateUser(idUser, updatedSessionData).enqueue(object : Callback<Void>{
+                        override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                            if (response.isSuccessful){
+                                Toast.makeText(this@Account, "Cuenta eliminada", Toast.LENGTH_SHORT).show()
+                                with(sharedPreferences.edit()) {
+                                    clear()
+                                    apply()
+                                }
+                                closeActivity()
+                            } else {
+                                Toast.makeText(this@Account, "Error ${response.code()}", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+                        override fun onFailure(call: Call<Void>, t: Throwable) {
+                            Toast.makeText(this@Account, "Error en la api", Toast.LENGTH_SHORT).show()
+                        }
+
+                    })
+                })
                 .setCancelable(true)
                 .show()
         }

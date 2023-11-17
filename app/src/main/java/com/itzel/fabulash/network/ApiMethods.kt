@@ -6,6 +6,7 @@ import com.itzel.fabulash.models.Cards
 import com.itzel.fabulash.models.Employee
 import com.itzel.fabulash.models.LashesResponse
 import com.itzel.fabulash.models.LoginData
+import com.itzel.fabulash.models.SessionData
 import com.itzel.fabulash.models.SessionResponse
 import com.itzel.fabulash.models.ViewAppointment
 import retrofit2.Call
@@ -21,6 +22,14 @@ import retrofit2.http.Query
 interface ApiMethods {
     @POST("api/login/")
     fun login(@Body newLogin: LoginData): Call<SessionResponse>
+
+    @POST("api/usuario/")
+    fun registerUser(@Body userData: SessionData): Call<Void>
+
+    @PATCH("api/usuario/{id}/")
+    fun updateUser(
+        @Path("id") idClient: Int,
+        @Body updatedUserInfo: SessionData): Call<Void>
 
     @GET("api/tarjeta/")
     fun getCardsInfo(@Query("id_cliente") idClient: Int): Call<MutableList<Cards>>
