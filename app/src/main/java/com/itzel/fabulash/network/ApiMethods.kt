@@ -89,7 +89,7 @@ interface ApiMethods {
         @Body newReview: Resena
     ): Call<Void>
 
-    @DELETE("api/resenas/{id}")
+    @DELETE("api/resenas/{id}/")
     fun deleteReview(
         @Path("id") idReview: Int
     ): Call<Void>

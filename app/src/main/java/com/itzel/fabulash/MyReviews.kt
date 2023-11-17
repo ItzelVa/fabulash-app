@@ -38,7 +38,8 @@ class MyReviews : AppCompatActivity(), OnClickListenerReviews{
 
         sharedPreferences = getSharedPreferences("session", Context.MODE_PRIVATE)
 
-        recycler = findViewById<RecyclerView>(R.id.recyclerReviews)
+
+        recycler = findViewById(R.id.recyclerReviews)
 
         val reviewsBack = findViewById<ImageButton>(R.id.myReviewsBackButton)
         reviewsBack.setOnClickListener {

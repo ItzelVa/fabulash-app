@@ -2,6 +2,7 @@ package com.itzel.fabulash.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuInflater
@@ -18,9 +19,13 @@ import com.itzel.fabulash.RegisterCard
 import com.itzel.fabulash.databinding.CardMyReviewsBinding
 import com.itzel.fabulash.events.OnClickListenerReviews
 import com.itzel.fabulash.models.Reviews
+import com.itzel.fabulash.network.Api
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class MyReviewsAdapter(private val reviews: MutableList<Reviews>, private val listener: OnClickListenerReviews): RecyclerView.Adapter<MyReviewsAdapter.ViewHolder> (){
-    private lateinit var context : Context
+class MyReviewsAdapter(private val reviews: MutableList<Reviews>, private val listener: OnClickListenerReviews): RecyclerView.Adapter<MyReviewsAdapter.ViewHolder> () {
+    private lateinit var context: Context
     private var pos: Int = 0
     inner class ViewHolder (view: View):RecyclerView.ViewHolder(view){
         val binding = CardMyReviewsBinding.bind(view)
@@ -49,13 +54,35 @@ class MyReviewsAdapter(private val reviews: MutableList<Reviews>, private val li
             when (item.itemId) {
                 R.id.modificar -> {
                     // Handle menu item 1 click
+                    val idReview = getReview(pos).id!!
                     val intent = Intent(context, EditReview::class.java)
+                        .putExtra("idReview", idReview)
+                        .putExtra("categoria", idReview)
+                        .putExtra("comentario", idReview)
+                        .putExtra("destino", idReview)
+                        .putExtra("estrellas", idReview)
                     context.startActivity(intent)
                     true
                 }
                 R.id.eliminar -> {
                     // Handle menu item 2 click
-                    remove(pos)
+                    val idReview = getReview(pos).id!!
+                    Api.request.deleteReview(idReview).enqueue(object : Callback<Void>{
+                        override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                            if (response.isSuccessful){
+                                Toast.makeText(context, "Reseña eliminada", Toast.LENGTH_SHORT).show()
+                                remove(pos)
+                            } else {
+                                Toast.makeText(context, "Error ${response.code()}", Toast.LENGTH_SHORT).show()
+                                failRemove()
+                            }
+                        }
+
+                        override fun onFailure(call: Call<Void>, t: Throwable) {
+                            Toast.makeText(context, "Error api", Toast.LENGTH_SHORT).show()
+                        }
+
+                    })
                     true
                 }
                 // Add more cases for other menu items as needed
@@ -103,6 +130,14 @@ class MyReviewsAdapter(private val reviews: MutableList<Reviews>, private val li
     fun remove(position: Int){
         reviews.removeAt(position)
         notifyItemRemoved(position)
+    }
+
+    fun failRemove(){
+        notifyDataSetChanged()
+    }
+
+    private fun getReview(position: Int): Reviews{
+        return reviews[position]
     }
 
 }
