@@ -84,12 +84,16 @@ class MyAppointments : AppCompatActivity(), OnClickListenerMyAppointments {
                                     call: Call<Void>,
                                     response: Response<Void>
                                 ) {
-                                    appointmentAdapter.remove(position)
-                                    Toast.makeText(this@MyAppointments, "Cita cancelada", Toast.LENGTH_SHORT).show()
+                                    if (response.isSuccessful){
+                                        appointmentAdapter.remove(position)
+                                        Toast.makeText(this@MyAppointments, "Cita cancelada", Toast.LENGTH_SHORT).show()
+                                    } else {
+                                        Toast.makeText(this@MyAppointments ,"Error ${response.code()}", Toast.LENGTH_SHORT).show()
+                                    }
                                 }
 
                                 override fun onFailure(call: Call<Void>, t: Throwable) {
-                                    TODO("Not yet implemented")
+                                    Toast.makeText(this@MyAppointments ,"Error error en la api", Toast.LENGTH_SHORT).show()
                                 }
 
                             })

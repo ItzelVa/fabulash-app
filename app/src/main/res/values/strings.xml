@@ -107,7 +107,7 @@
     <string name="registrar_tarjeta">Registrar Tarjeta</string>
     <string name="nombreTitular">Nombre del titular</string>
     <string name="numeroTarjeta">Numero de la tarjeta</string>
-    <string name="fechaTarjeta">MM/YY</string>
+    <string name="fechaTarjeta">YYYY-MM</string>
     <string name="cvcTarjeta">CVC</string>
     <string name="agregar">Agregar</string>
     <string name="eliminar">Eliminar</string>

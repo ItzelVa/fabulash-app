@@ -160,6 +160,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:imeOptions="actionDone"
+                android:maxLength="7"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

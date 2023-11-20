@@ -46,7 +46,7 @@ class RegisterCard : AppCompatActivity() {
                 apellido = apellido.text.toString(),
                 clvusu = idCliente,
                 cvd = cvc.text.toString().toInt(),
-                fecha_vencimiento = fecha.text.toString(),
+                fecha_vencimiento = fecha.text.toString() + "-01",
                 nombre = nombre.text.toString(),
                 numero = numero.text.toString()
             )

@@ -53,7 +53,7 @@ class ModifyCardData : AppCompatActivity() {
                 apellido = apellido.text.toString(),
                 clvusu = idCliente,
                 cvd = cvc.text.toString().toInt(),
-                fecha_vencimiento = fecha.text.toString(),
+                fecha_vencimiento = fecha.text.toString() + "-01",
                 hab = hab,
                 id = pos,
                 nombre = nombre.text.toString(),

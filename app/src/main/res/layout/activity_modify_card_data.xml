@@ -146,7 +146,7 @@
             app:layout_constraintTop_toBottomOf="@id/inputCardNumberM"
             app:layout_constraintStart_toStartOf="@id/inputCardNumberM"
             app:layout_constraintEnd_toStartOf="@+id/inputCardCvcM"
-            android:hint="@string/fechaTarjeta2"
+            android:hint="@string/fechaTarjeta"
             app:endIconMode="clear_text"
             style="@style/InputLayout"
             android:layout_marginTop="8dp"
@@ -160,7 +160,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:imeOptions="actionDone"
-                android:maxLength="10"
+                android:maxLength="7"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
