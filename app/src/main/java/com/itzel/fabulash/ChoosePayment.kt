@@ -84,6 +84,7 @@ class ChoosePayment : AppCompatActivity() {
                         clvser = idService,
                         clvstat = 1,
                         clvusu = idClient,
+                        clvemp = idEmployee,
                         fecha = chosenDate,
                         hab = true,
                         hora = chosenHour,
