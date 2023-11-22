@@ -33,7 +33,7 @@ class ViewCardsAdapter(private val cards: MutableList<Cards>, private val listen
             setListener(card, position+1)
             binding.cardType.text = card.getCardType(card.numero)
             binding.cardName.text = "${card.nombre} ${card.apellido}"
-            binding.cardDate.text = card.nombre
+            binding.cardDate.text = card.fecha_vencimiento
             binding.cardNumber.text = card.numero
             binding.cardCvc.text = card.cvd.toString()
         }

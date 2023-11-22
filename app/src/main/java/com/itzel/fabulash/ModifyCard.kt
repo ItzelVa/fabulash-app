@@ -64,7 +64,7 @@ class ModifyCard : AppCompatActivity(), OnClickListenerModifyCards {
         getCards()
 
     }
-    private fun getCards(): MutableList<Cards> {
+    private fun getCards() {
         val idCliente = sharedPreferences.getInt("id_user", 0)
         var cards = mutableListOf<Cards>()
 
@@ -98,8 +98,6 @@ class ModifyCard : AppCompatActivity(), OnClickListenerModifyCards {
                 Toast.makeText(this@ModifyCard, "Fallo en la api", Toast.LENGTH_SHORT).show()
             }
         })
-
-        return cards
     }
 
     @SuppressLint("WrongViewCast", "ResourceAsColor")

@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.itzel.fabulash.adapter.ModifyCardsAdapter
 import com.itzel.fabulash.databinding.TarjetasBinding
 import com.itzel.fabulash.events.OnClickListenerCards
 import com.itzel.fabulash.models.Cards
