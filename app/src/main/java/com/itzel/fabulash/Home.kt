@@ -5,11 +5,20 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import com.itzel.fabulash.databinding.ActivityHomeBinding
+import com.itzel.fabulash.models.NextAppointment
+import com.itzel.fabulash.models.NextAppointmentData
+import com.itzel.fabulash.network.Api
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Home : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var sharedPreferences : SharedPreferences
+    private var idClient = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -20,9 +29,28 @@ class Home : AppCompatActivity() {
 
         with(sharedPreferences){
             binding.homeUser.text = getString("name", "Invitad@")
+            idClient = getInt("id_user", 0)
         }
 
-        //Set username
+        Api.request.getNextAppointment(idClient).enqueue(object : Callback<NextAppointment>{
+            override fun onResponse(
+                call: Call<NextAppointment>,
+                response: Response<NextAppointment>
+            ) {
+                if (response.code() == 200){
+                    binding.homeDay.text = response.body()!!.data.dia.toString()
+                    binding.homeMonth.text = response.body()!!.data.mes
+                    binding.homeHour.text = response.body()!!.data.hora
+                    binding.homeStatus.text = response.body()!!.data.estatus
+                    binding.homeStatus.visibility = View.VISIBLE
+                }
+            }
+
+            override fun onFailure(call: Call<NextAppointment>, t: Throwable) {
+                Toast.makeText(this@Home, "Error en la api", Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 
     override fun onStart() {

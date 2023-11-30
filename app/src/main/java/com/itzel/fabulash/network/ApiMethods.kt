@@ -7,6 +7,7 @@ import com.itzel.fabulash.models.Cards
 import com.itzel.fabulash.models.Employee
 import com.itzel.fabulash.models.LashesResponse
 import com.itzel.fabulash.models.LoginData
+import com.itzel.fabulash.models.NextAppointment
 import com.itzel.fabulash.models.Resena
 import com.itzel.fabulash.models.Reviews
 import com.itzel.fabulash.models.SessionData
@@ -73,6 +74,11 @@ interface ApiMethods {
     fun getAppointments(
         @Query("id_cliente") idClient: Int
     ): Call<ViewAppointment>
+
+    @GET("api/proxima-cita/")
+    fun getNextAppointment(
+        @Query("id_cliente") idClient: Int
+    ): Call<NextAppointment>
 
     @PATCH("api/cita/{id}/")
     fun updateApointMent(
