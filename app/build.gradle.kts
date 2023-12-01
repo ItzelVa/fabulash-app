@@ -45,6 +45,14 @@ android {
 
 dependencies {
 
+    implementation ("androidx.camera:camera-camera2:1.0.0")
+
+// CameraX lifecycle library
+    implementation ("androidx.camera:camera-lifecycle:1.0.0")
+
+// CameraX view class
+    implementation ("androidx.camera:camera-view:1.0.0-alpha22")
+
     //Install Splash API
     implementation("androidx.core:core-splashscreen:1.1.0-alpha02")
 

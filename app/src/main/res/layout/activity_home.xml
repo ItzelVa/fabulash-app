@@ -389,7 +389,6 @@
                 android:text="@string/agendar_nueva_cita"
                 android:textColor="@color/white"
                 style="@style/ButtonsStyle3"
-                android:clickable="false"
                 android:backgroundTint="@color/night" />
 
         </FrameLayout>
@@ -404,7 +403,7 @@
             android:layout_marginBottom="3dp"
             android:backgroundTint="@color/statusGreen"
             app:icon="@drawable/mini_eye_buttons"
-            app:iconSize="40dp"
+            app:iconSize="30dp"
             android:textSize="16sp"
             android:clickable="true"
             android:focusable="true"/>
@@ -449,7 +448,7 @@
             android:backgroundTint="@color/statusGreen"
             app:icon="@drawable/mini_eye_buttons"
             android:textSize="16sp"
-            app:iconSize="40dp"
+            app:iconSize="30dp"
             android:clickable="true"
             android:focusable="true"/>
 
@@ -559,20 +558,22 @@
                 android:textColor="@color/white"
                 style="@style/ButtonsStyle3"
                 android:clickable="false"
-                android:backgroundTint="@color/night" />
+                android:backgroundTint="@color/night"
+                />
+
+            <ImageButton
+                android:id="@+id/homeMap"
+                style="@style/ButtonsStyle4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text=""
+                android:onClick="openLink"/>
 
         </FrameLayout>
-
-        <ImageButton
-            android:id="@+id/homeMap"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text=""
-            style="@style/ButtonsStyle4"
-            android:layout_marginEnd="3dp"
-            android:layout_marginBottom="3dp"
-            android:clickable="true"
-            android:focusable="true"/>
 
     </FrameLayout>
 

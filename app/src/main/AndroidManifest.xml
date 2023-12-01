@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -14,8 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fabulash"
-
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".CameraPreview"
+            android:exported="false" />
         <activity
             android:name=".NewReview"
             android:exported="false" />
@@ -24,7 +29,7 @@
             android:exported="false" />
         <activity
             android:name=".MyReviews"
-            android:exported = "false"/>
+            android:exported="false" />
         <activity
             android:name=".Reprogramar"
             android:exported="false" />
@@ -56,10 +61,10 @@
             android:exported="false" />
         <activity
             android:name=".ChooseEmployee"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".modificar_datos"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ChooseLashes"
             android:exported="false" />
@@ -86,10 +91,6 @@
         <activity
             android:name=".Login"
             android:exported="false" />
-        <activity
-            android:name=".review"
-            android:exported="false">
-        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

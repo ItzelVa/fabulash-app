@@ -86,6 +86,7 @@
         <item name="backgroundTint">#00FFFFFF</item>
     </style>
 
+
     <style name="ButtonsStyle3">
         <item name="cornerRadius">12dp</item>
         <item name="android:textSize">18sp</item>

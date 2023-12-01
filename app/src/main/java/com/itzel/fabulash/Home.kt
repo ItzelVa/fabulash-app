@@ -3,6 +3,7 @@ package com.itzel.fabulash
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,6 +20,8 @@ class Home : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var sharedPreferences : SharedPreferences
     private var idClient = 0
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -53,6 +56,17 @@ class Home : AppCompatActivity() {
         })
     }
 
+    fun openLink(view: View) {
+        // Replace "https://example.com" with your desired URL
+        val url = "https://maps.app.goo.gl/wrygBpxsgVsuJF4w5"
+
+        // Create an Intent with the ACTION_VIEW action and the URL
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+
+        // Start the browser activity
+        startActivity(intent)
+    }
+
     override fun onStart() {
         super.onStart()
         binding.homeAddAppointment.setOnClickListener {
@@ -74,6 +88,11 @@ class Home : AppCompatActivity() {
             val intent = Intent(this, NewReview::class.java)
             startActivity(intent)
             
+        }
+
+        binding.homeFilters.setOnClickListener {
+            val intent = Intent(this, CameraPreview::class.java)
+            startActivity(intent)
         }
 
     }
