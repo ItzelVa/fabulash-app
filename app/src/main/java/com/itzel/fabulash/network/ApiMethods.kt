@@ -1,10 +1,10 @@
 package com.itzel.fabulash.network
 
-import com.itzel.fabulash.NewReview
 import com.itzel.fabulash.models.AppointmentPost
 import com.itzel.fabulash.models.AppointmentUpdate
 import com.itzel.fabulash.models.Cards
 import com.itzel.fabulash.models.Employee
+import com.itzel.fabulash.models.Horas
 import com.itzel.fabulash.models.LashesResponse
 import com.itzel.fabulash.models.LoginData
 import com.itzel.fabulash.models.NextAppointment
@@ -66,6 +66,11 @@ interface ApiMethods {
 
     @GET("api/pestanas/")
     fun getLashes(): Call<LashesResponse>
+
+    @GET("api/cita/")
+    fun getAppointmentHours(
+        @Query("fecha") fecha: String
+    ): Call<Horas>
 
     @POST("api/cita/")
     fun setAppointment(@Body newAppointment: AppointmentPost): Call<Void>
